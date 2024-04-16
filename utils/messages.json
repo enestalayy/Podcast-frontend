@@ -1,0 +1,21 @@
+{
+  "tryAgain": "Tekrar Dene",
+  "pleaseTryAgain": "Lütfen tekrar deneyin",
+  "errorOccured": "Bir Hata Oluştu",
+  "password-placeholder": "Şifre en az 8 karakter olmalıdır.",
+  "send": "Gönder",
+  "default": "Bir hata oluştu, lütfen en kısa sürede destek sağlamamız için bize e-posta gönderin.",
+  "notFound": "Bulunamadı",
+  "auth": {
+    "resendConfirmation": "Hesabınız doğrulanamadı lütfen e-postanızı kontrol edin ve tekrar üye olun.",
+    "404": "E-posta ve şifreniz eşleşmiyor. Lütfen tekrar deneyin.",
+    "409": "Bu e-posta zaten kullanılıyor. Lütfen başka bir e-posta deneyin veya mevcut hesabınıza giriş yapın.",
+    "429": "Şu an üyelik taleplerimizde yoğunluk var. Lütfen biraz sonra tekrar deneyin veya Google ile giriş yapın. Anlayışınız için teşekkür ederiz!"
+  },
+  "400": "İsteğinizde bir hata oluştu. Lütfen tekrar deneyin.",
+  "401": "Bu işlem için yetkiniz bulunmuyor. Lütfen giriş yapın.",
+  "403": "Bu içeriği görüntüleme izniniz bulunmuyor.",
+  "404": "Aradığınız sayfa bulunamadı. Lütfen kontrol ederek tekrar deneyin.",
+  "422": "Üzgünüz, isteğinizdeki içerik geçersiz veya eksik. Lütfen gerekli düzeltmeleri yaparak tekrar deneyin.",
+  "500": "Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyin."
+}
