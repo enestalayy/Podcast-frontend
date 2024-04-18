@@ -1,4 +1,5 @@
 {
+  "AuthApiError: Email rate limit exceeded": "İstek sınırı aşıldı lütfen daha sonra tekrar deneyiniz.",
   "tryAgain": "Tekrar Dene",
   "pleaseTryAgain": "Lütfen tekrar deneyin",
   "errorOccured": "Bir Hata Oluştu",
