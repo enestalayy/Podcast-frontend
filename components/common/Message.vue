@@ -1,13 +1,13 @@
 <template>
   <div>
     <PrimeMessage :severity="severity">{{
-      messages.message ? messages.message : message
+      messages.message || messages[message] || message
     }}</PrimeMessage>
   </div>
 </template>
 
 <script>
-import messages from "~/utils/messages.json";
+import messages from "~/assets/jsons/messages.json";
 export default {
   name: "Message",
   data() {

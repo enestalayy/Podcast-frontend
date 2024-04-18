@@ -25,26 +25,32 @@ export const useAuthStore = defineStore("authStore", {
           },
         });
         this.pending = false;
+        console.log("data :>> ", data);
+        console.log("error :>> ", error);
         const isConflict = data.user?.identities.length === 0; // already a member
         if (isConflict) {
           return { error: 409 };
-        } else return error;
+        } else return { error: error.message };
       } catch (error) {
-        return error;
+        return 500;
       }
     },
     async login(payload) {
       const { email, password } = payload;
       const supabase = useSupabaseClient();
-      this.pending = true;
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
-      this.pending = false;
-      if (!error) {
-        alert("Giriş Başarılı!");
-      } else return error;
+      try {
+        this.pending = true;
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+        this.pending = false;
+        if (!error) {
+          alert("Giriş Başarılı!");
+        } else return { error };
+      } catch (error) {
+        return 500;
+      }
     },
     async loginWithGoogle() {
       const supabase = useSupabaseClient();
@@ -54,6 +60,21 @@ export const useAuthStore = defineStore("authStore", {
       });
       this.pending = false;
       return error;
+    },
+    async resetPassword(forgetEmail) {
+      const supabase = useSupabaseClient();
+      try {
+        this.pending = true;
+        const { data, error } = await supabase.auth.resetPasswordForEmail(
+          forgetEmail
+        );
+        console.log("data :>> ", data);
+        console.log("error :>> ", error);
+        this.pending = false;
+        return { data, error };
+      } catch (err) {
+        return 500;
+      }
     },
   },
 });

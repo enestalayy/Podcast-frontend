@@ -7,17 +7,20 @@
   flex-direction: row;
   align-items: center;
 }
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
 .col-end {
   display: flex;
   flex-direction: column;
   align-items: end;
-  justify-content: center;
 }
 .col-center {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 form {
@@ -33,4 +36,28 @@ input {
 .p-button-link {
   width: fit-content;
   margin: 0 auto;
+}
+/* General Styles */
+* {
+  list-style: none;
+}
+body {
+  margin: 0;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+ul {
+  padding-inline-start: 0;
+}
+/* Responsive Styles */
+
+@media (min-width: 769px) {
+  .header {
+    display: none;
+  }
+  .sidebarButton,
+  .p-sidebar {
+    display: none;
+  }
 }

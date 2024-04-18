@@ -1,7 +1,10 @@
 <template>
   <form @submit.prevent="handleSignup">
-    <Message v-if="error" :message="error" />
-
+    <Message
+      v-if="showMessage"
+      :message="error ? error : 'Lütfen gelen e-postanızı onaylayınız'"
+      :severity="error && 'warn'"
+    />
     <PrimeFloatLabel>
       <PrimeInputText
         id="name"
@@ -32,7 +35,7 @@
         type="email"
         inputmode="email"
         :required="true"
-        @update:modelValue="() => test"
+        @update:modelValue="() => (error = null)"
         :class="error ? 'p-invalid' : null"
       />
     </PrimeFloatLabel>
@@ -79,6 +82,7 @@
     </PrimeDivider>
 
     <PrimeButton
+      @click="setPopupComponent({ header: 'Giriş yap', name: 'Login' })"
       :loading="pending"
       :disabled="error"
       link
@@ -88,6 +92,7 @@
     />
 
     <PrimeButton
+      @click="loginWithGoogle"
       :loading="pending"
       :disabled="error"
       outlined
@@ -99,7 +104,7 @@
       type="submit"
       :loading="pending"
       :disabled="error"
-      :label="pending ? 'Giriş yapılıyor...' : 'Giriş yap'"
+      :label="pending ? 'Kayıt yapılıyor...' : 'Kayıt ol'"
       class="bg-white text-black"
     />
   </form>
@@ -117,7 +122,8 @@ export default {
       email: "",
       password: "",
       birthDate: "",
-      confirmMessage: false,
+      showMessage: false,
+      data: null,
       error: null,
     };
   },
@@ -125,12 +131,13 @@ export default {
     ...mapState(useAuthStore, ["pending"]),
   },
   methods: {
-    ...mapActions(useAuthStore, ["signup"]),
+    ...mapActions(useAuthStore, ["signup", "loginWithGoogle"]),
+    ...mapActions(useToggleStore, ["setPopupComponent"]),
     async handleSignup() {
       const mediumRegex = new RegExp(
         "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})"
       );
-      if (!mediumRegex.test(this.password)) {
+      if (mediumRegex.test(this.password)) {
         const { data, error } = await this.signup({
           name: this.name,
           surname: this.surname,
@@ -141,10 +148,12 @@ export default {
         if (error) {
           this.error = error;
         } else {
+          this.data = data;
         }
       } else {
-        alert("kötü şifre!");
+        this.error = "Lütfen daha iyi bir şifre giriniz.";
       }
+      this.showMessage = true;
     },
   },
 };

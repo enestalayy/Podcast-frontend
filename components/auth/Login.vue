@@ -27,6 +27,9 @@
       <b v-text="'Diğer Seçenekler'" />
     </PrimeDivider>
     <PrimeButton
+      @click="
+        setPopupComponent({ header: 'Şifremi Unuttum', name: 'ForgetPassword' })
+      "
       :loading="pending"
       :disabled="error"
       link
@@ -35,6 +38,7 @@
       severity="danger"
     />
     <PrimeButton
+      @click="loginWithGoogle"
       :loading="pending"
       :disabled="error"
       outlined
@@ -68,7 +72,8 @@ export default {
     ...mapState(useAuthStore, ["pending"]),
   },
   methods: {
-    ...mapActions(useAuthStore, ["login"]),
+    ...mapActions(useAuthStore, ["login", "loginWithGoogle"]),
+    ...mapActions(useToggleStore, ["setPopupComponent"]),
     async handleLogin() {
       const { error } = await this.login();
       if (error) {
