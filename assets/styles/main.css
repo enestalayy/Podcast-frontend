@@ -52,7 +52,7 @@ ul {
 }
 /* Responsive Styles */
 
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
   .header {
     display: none;
   }

@@ -8,6 +8,9 @@ export default defineNuxtConfig({
     "@nuxtjs/supabase",
     "@nuxtjs/google-fonts",
   ],
+  experimental: {
+    payloadExtraction: true,
+  },
   supabase: {
     url: process.env.SUPABASE_URL,
     key: process.env.SUPABASE_KEY,
