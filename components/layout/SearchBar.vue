@@ -1,18 +1,19 @@
 <template>
-  <div>
+  <PrimeInputGroup class="searchBar">
     <PrimeButton
-      v-show="!showAutoComplete"
       @click="handleShowAutoComplete"
       icon="pi pi-search"
-      label="Arama"
+      style="transition: all 0.5s ease-out"
+      :class="{ 'p-button-label firstInput': !showAutoComplete }"
+      :label="showAutoComplete ? '' : 'Arama'"
     />
     <PrimeAutoComplete
       inputId="autoCompleteInput"
-      style="transition: all 0.5s"
+      style="transition: all 0.5s ease-in"
       :class="showAutoComplete ? 'showAutoComplete' : 'hideAutoComplete'"
       @blur="showAutoComplete = false"
     />
-  </div>
+  </PrimeInputGroup>
 </template>
 
 <script>
@@ -25,23 +26,33 @@ export default {
   },
   methods: {
     handleShowAutoComplete() {
-      this.showAutoComplete = true;
-      const autoCompleteInput = document.getElementById("autoCompleteInput");
-      autoCompleteInput.focus();
+      this.showAutoComplete = !this.showAutoComplete;
+      if (this.showAutoComplete) {
+        const autoCompleteInput = document.getElementById("autoCompleteInput");
+        autoCompleteInput.focus();
+      }
     },
   },
 };
 </script>
 
 <style scoped>
-div {
-  display: flex;
+.searchBar {
+  width: 170px;
 }
+
+.firstInput {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
 .showAutoComplete {
-  width: 100%;
+  width: 80%;
   opacity: 1;
 }
-.hideAutoComplete {
+
+.hideAutoComplete,
+.hideAutoComplete#autoCompleteInput {
   width: 0%;
   opacity: 0;
 }

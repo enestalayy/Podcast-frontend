@@ -1,6 +1,10 @@
 <template>
   <ul>
-    <li v-for="next in queue"></li>
+    <li>QUEUE</li>
+    <li>QUEUE</li>
+    <li>QUEUE</li>
+    <li>QUEUE</li>
+    <li>QUEUE</li>
   </ul>
 </template>
 

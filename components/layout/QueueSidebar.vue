@@ -6,12 +6,7 @@
       position="right"
       header="Sidebar"
     >
-      <p>QUEUE</p>
-      <p>QUEUE</p>
-      <p>QUEUE</p>
-      <p>QUEUE</p>
-      <p>QUEUE</p>
-      <p>QUEUE</p>
+      <Playlist />
     </PrimeSidebar>
     <PrimeButton
       class="sidebarButton"
@@ -22,11 +17,16 @@
   </div>
 </template>
 <script>
+import Playlist from "../podcast/Playlist.vue";
+
 export default {
   data() {
     return {
       visible: false,
     };
+  },
+  components: {
+    Playlist,
   },
 };
 </script>

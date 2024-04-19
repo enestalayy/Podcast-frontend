@@ -4,6 +4,7 @@ export const useAuthStore = defineStore("authStore", {
   state: () => ({
     // Supabase sadece data ve error dönüyor bu yüzden pending oluşturuyoruz.
     pending: false,
+    session: null,
   }),
   getters: {},
   actions: {
@@ -46,7 +47,7 @@ export const useAuthStore = defineStore("authStore", {
         });
         this.pending = false;
         if (!error) {
-          alert("Giriş Başarılı!");
+          this.session = data.value;
         } else return { error };
       } catch (error) {
         return 500;
@@ -75,6 +76,15 @@ export const useAuthStore = defineStore("authStore", {
       } catch (err) {
         return 500;
       }
+    },
+    async getSession() {
+      const supabase = useSupabaseClient();
+
+      const { data, error } = await supabase.auth.getSession();
+      if (!error) {
+        this.session = data.value;
+      }
+      return { error };
     },
   },
 });
