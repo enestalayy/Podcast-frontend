@@ -10,11 +10,11 @@ import { mapActions } from "pinia";
 export default {
   methods: {
     ...mapActions(usePodcastStore, ["getPodcasts"]),
+    ...mapActions(useAuthStore, ["getSession"]),
   },
   created() {
-    console.log("çalıştı");
-
     this.getPodcasts();
+    this.getSession();
   },
 };
 </script>

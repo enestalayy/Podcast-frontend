@@ -12,6 +12,11 @@
   flex-direction: column;
   align-items: start;
 }
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .col-end {
   display: flex;
   flex-direction: column;
@@ -22,7 +27,14 @@
   flex-direction: column;
   align-items: center;
 }
-
+.col-around {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.gap {
+  gap: 15px;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -50,9 +62,19 @@ body {
 ul {
   padding-inline-start: 0;
 }
+.p-dialog {
+  max-height: 100%;
+}
+
+.swiper-slide-shadow {
+  display: none !important;
+}
 /* Responsive Styles */
 
 @media (min-width: 1025px) {
+  .container {
+    padding: 15px;
+  }
   .header {
     display: none;
   }

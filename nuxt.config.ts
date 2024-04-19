@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     "nuxt-primevue",
     "@nuxtjs/supabase",
     "@nuxtjs/google-fonts",
+    "nuxt-swiper",
   ],
   experimental: {
     payloadExtraction: true,
