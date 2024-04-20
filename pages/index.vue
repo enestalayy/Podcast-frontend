@@ -22,4 +22,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+div {
+  width: 100%;
+}
+</style>

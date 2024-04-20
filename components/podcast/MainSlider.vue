@@ -1,5 +1,5 @@
 <template>
-  <div class="col-center" style="width: 100%">
+  <div class="col-center">
     <Swiper
       :effect="'cards'"
       :grabCursor="true"
@@ -55,10 +55,6 @@ export default {
 </script>
 
 <style scoped>
-.swiper {
-  width: 100%;
-  max-width: 60vw;
-}
 .swiper-slide {
   display: flex;
   align-items: center;
@@ -79,10 +75,6 @@ img {
   border-radius: 15px;
 }
 @media (max-width: 1024px) {
-  .swiper {
-    width: 100%;
-    max-width: 100vw;
-  }
   img {
     width: 50vw;
     height: auto;
