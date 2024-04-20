@@ -7,13 +7,21 @@
       class="col-center gap"
     >
       {{ console.log("set :>> ", set) }}
-      <h3>{{ set.title }}</h3>
+      <NuxtLink>
+        <PrimeButton
+          :badge="set.contents.length"
+          iconPos="right"
+          icon="pi pi-arrow-right"
+          size="large"
+          link
+          :label="set.title"
+        />
+      </NuxtLink>
       <Swiper
         :effect="'coverflow'"
         :grabCursor="true"
         :centeredSlides="true"
         slidesPerView="4"
-        :spaceBetween="50"
         :loop="true"
         :lazy="set.index > 3"
         :coverflowEffect="{
@@ -21,15 +29,37 @@
           stretch: 0,
           depth: 100,
           modifier: 1,
-          slideShadows: false,
+          slideShadows: true,
         }"
-        :pagination="true"
+        :pagination="false"
         :modules="modules"
+        :breakpoints="{
+          1025: {
+            slidesPerView: 4,
+          },
+          1441: {
+            slidesPerView: 4,
+          },
+        }"
       >
-        <SwiperSlide v-for="content in set.contents">
-          <PrimeCard>
+        <SwiperSlide class="cardSlide" v-for="content in set.contents">
+          <PrimeCard class="card">
             <template #header>
               <img :src="content.imageUrl" alt="image" />
+            </template>
+            <!-- <template #title>
+              {{ content.title }}
+            </template> -->
+            <template #content>
+              <p class="cardDescription" v-text="content.description" />
+            </template>
+            <template #footer>
+              <div class="row-between">
+                <PrimeButton text icon="pi pi-heart" />
+                <NuxtLink>
+                  <PrimeButton icon="pi pi-play" />
+                </NuxtLink>
+              </div>
             </template>
           </PrimeCard>
         </SwiperSlide>
@@ -75,11 +105,27 @@ export default {
 div {
   width: 100%;
 }
-.swiper {
-  max-width: 80vw;
-}
+
 img {
   width: 100%;
   height: auto;
+  border-radius: 5px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.card {
+  text-align: center;
+}
+.cardSlide {
+  border-radius: 12px;
+  height: max-content;
+  overflow: hidden; /* slide shadowun taşmaması için */
+}
+.cardDescription {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>
