@@ -12,7 +12,14 @@
         :key="index"
         class="bigSlide"
       >
-        <img :src="slide.imageUrl" alt="image" />
+        <NuxtImg
+          :src="slide.imageUrl"
+          format="webp"
+          alt="image"
+          quality="100"
+          sizes="50vw md:30vw lg:20vw"
+          class="bigSliderImage"
+        />
       </SwiperSlide>
     </Swiper>
   </div>
@@ -43,14 +50,6 @@ export default {
       },
     };
   },
-  methods: {
-    onSwiper(swiper) {
-      console.log(swiper);
-    },
-    onSlideChange() {
-      console.log("slide change");
-    },
-  },
 };
 </script>
 
@@ -69,16 +68,9 @@ export default {
 .bigSlide {
   height: auto;
 }
-img {
+.bigSliderImage {
   width: 20vw;
   height: auto;
   border-radius: 15px;
-}
-@media (max-width: 1024px) {
-  img {
-    width: 50vw;
-    height: auto;
-    border-radius: 15px;
-  }
 }
 </style>

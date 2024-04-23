@@ -1,5 +1,5 @@
 <template>
-  <div class="col-around menu">
+  <nav class="col-around menu">
     <ul class="col">
       <li>
         <NuxtLink to="/">
@@ -25,15 +25,13 @@
         @click="setPopupComponent({ header: 'Kayıt ol', name: 'Signup' })"
         label="Kayıt ol"
         outlined
-        size="small"
       />
       <PrimeButton
         @click="setPopupComponent({ header: 'Giriş yap', name: 'Login' })"
         label="Giriş yap"
-        size="small"
       />
     </PrimeInputGroup>
-  </div>
+  </nav>
 </template>
 
 <script>
@@ -65,7 +63,7 @@ button {
   white-space: nowrap;
 }
 @media (max-width: 1024px) {
-  div {
+  .menu {
     align-items: center;
   }
 }

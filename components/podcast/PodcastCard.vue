@@ -1,63 +1,49 @@
 <template>
-  <div class="col-center gap">
+  <div class="col-center gap w-full">
     <div
       v-show="set.index !== 0"
       v-for="set in podcasts.sets"
       :key="set.id"
-      class="col-center gap"
+      class="col w-full py pl"
     >
-      {{ console.log("set :>> ", set) }}
-      <NuxtLink>
-        <PrimeButton
-          :badge="set.contents.length"
-          iconPos="right"
-          icon="pi pi-arrow-right"
-          size="large"
-          link
-          :label="set.title"
-        />
+      <NuxtLink :to="`genres${set.path}`">
+        <PrimeButton size="large" link :label="set.title" />
       </NuxtLink>
+
       <Swiper
-        :effect="'coverflow'"
         :grabCursor="true"
-        :centeredSlides="true"
-        slidesPerView="4"
-        :loop="true"
-        :lazy="set.index > 3"
-        :coverflowEffect="{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }"
-        :pagination="false"
-        :modules="modules"
-        :breakpoints="{
-          1025: {
-            slidesPerView: 4,
-          },
-          1441: {
-            slidesPerView: 4,
-          },
-        }"
+        :slidesPerView="'auto'"
+        :spaceBetween="30"
+        class="w-full"
       >
-        <SwiperSlide class="cardSlide" v-for="content in set.contents">
+        <SwiperSlide
+          class="cardSlide"
+          v-for="(content, index) in set.contents"
+          :key="index"
+          :lazy="set.index > 8"
+        >
           <PrimeCard class="card">
             <template #header>
-              <img :src="content.imageUrl" alt="image" />
+              <NuxtImg
+                format="webp"
+                quality="20"
+                size="200"
+                :src="content.imageUrl"
+                :alt="content.title"
+                :placeholder="set.index > 8 ? 200 : false"
+                :loading="set.index > 8 ? 'lazy' : 'eager'"
+              />
             </template>
-            <!-- <template #title>
-              {{ content.title }}
-            </template> -->
             <template #content>
               <p class="cardDescription" v-text="content.description" />
             </template>
             <template #footer>
               <div class="row-between">
-                <PrimeButton text icon="pi pi-heart" />
-                <NuxtLink>
-                  <PrimeButton icon="pi pi-play" />
+                <div>
+                  <CardMenu :id="content.id" :index="index" />
+                </div>
+                <NuxtLink :to="`genres${set.path}`">
+                  <PrimeButton icon="pi pi-play" aria-label="Oynat" />
                 </NuxtLink>
               </div>
             </template>
@@ -70,31 +56,17 @@
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { EffectCoverflow, Autoplay, Pagination } from "swiper/modules";
 import { mapState } from "pinia";
 import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/autoplay";
-import "swiper/css/pagination";
+import CardMenu from "./CardMenu.vue";
 
 export default {
   name: "PodcastCard",
   components: {
     Swiper,
     SwiperSlide,
+    CardMenu,
   },
-  computed: {
-    ...mapState(usePodcastStore, ["podcasts"]),
-  },
-  setup() {
-    return {
-      modules: [EffectCoverflow, Autoplay, Pagination],
-      autoplay: {
-        disableOnInteraction: false,
-      },
-    };
-  },
-  name: "PodcastCard",
   computed: {
     ...mapState(usePodcastStore, ["podcasts"]),
   },
@@ -102,10 +74,6 @@ export default {
 </script>
 
 <style scoped>
-div {
-  width: 100%;
-}
-
 img {
   width: 100%;
   height: auto;
@@ -113,14 +81,19 @@ img {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
+
 .card {
+  max-width: 200px;
+  height: 100%;
   text-align: center;
 }
 .cardSlide {
+  width: fit-content;
   border-radius: 12px;
-  height: max-content;
-  overflow: hidden; /* slide shadowun taşmaması için */
+  height: auto;
+  overflow: hidden;
 }
+
 .cardDescription {
   display: -webkit-box;
   -webkit-box-orient: vertical;

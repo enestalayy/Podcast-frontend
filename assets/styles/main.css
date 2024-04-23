@@ -1,46 +1,88 @@
-/* .p-dialog-header {
-  padding-bottom: 0;
-  justify-content: end;
-} */
+.w-full {
+  width: 100%;
+}
+
 .row {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
 .col {
   display: flex;
   flex-direction: column;
   align-items: start;
 }
+
 .center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.row-end {
+  display: flex;
+  justify-content: end;
+}
+
 .col-end {
   display: flex;
   flex-direction: column;
   align-items: end;
 }
+
 .col-center {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .row-between {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .col-around {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
+
 .gap {
   gap: 15px;
 }
+
+.p {
+  padding: 15px;
+}
+
+.px {
+  padding: 0 15px;
+}
+
+.py {
+  padding: 15px 0;
+}
+
+.pl {
+  padding-left: 15px;
+}
+
+/* General Styles */
+* {
+  list-style: none;
+}
+
+body {
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -48,26 +90,20 @@ form {
   gap: 20px;
   min-width: 360px;
 }
+
 input {
   width: 100%;
 }
+
 .p-button-link {
   width: fit-content;
   margin: 0 auto;
 }
-/* General Styles */
-* {
-  list-style: none;
-}
-body {
-  margin: 0;
-}
-::-webkit-scrollbar {
-  display: none;
-}
+
 ul {
   padding-inline-start: 0;
 }
+
 .p-dialog {
   max-height: 100%;
 }
@@ -82,7 +118,8 @@ ul {
 
 .swiper {
   width: inherit;
-  padding: 30px 0 !important;
+  max-width: 100%;
+  padding: 20px 0 !important;
 }
 
 /* Layout */
@@ -94,42 +131,31 @@ ul {
   transition: all 0.5s;
 }
 
-.broadenLayout {
-  .asideRight {
-    padding: 0;
-    width: 0%;
-    height: 0%;
-    opacity: 0;
-  }
-  .main {
-    width: 85vw;
-  }
-}
-
 .header {
   width: 100%;
   height: fit-content;
   position: fixed;
   top: 0;
 }
-aside {
+
+.aside {
   height: 100vh;
   transition: all 0.5s;
-}
-.asideLeft {
   position: fixed;
   top: 0;
   left: 0;
   width: 15vw;
   padding: 15px;
+  border-right: 2px solid var(--primary-color);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .main {
-  width: 70vw;
+  width: 85vw;
   position: relative;
   margin-left: 15vw;
   transition: all 0.5s;
-  background-color: bisque;
   .showPlaylistButton {
     position: fixed;
     top: 15px;
@@ -138,18 +164,67 @@ aside {
   }
 }
 
-.asideRight {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 15vw;
-  padding: 15px;
-  opacity: 1;
-  transition: all 0.5s;
-  .showRightAside {
-    text-align: start;
-    width: 100%;
+.p-sidebar {
+  transition: transform 0.5s;
+}
+
+.p-sidebar-left {
+  .p-sidebar {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-right: 2px solid var(--primary-color);
   }
+}
+
+.p-sidebar-right {
+  .p-sidebar {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-left: 2px solid var(--primary-color);
+  }
+}
+
+/* Home Page */
+
+.p-card-header,
+.p-card-body {
+  height: 50%;
+}
+
+.p-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-card-body {
+  gap: 0;
+  justify-content: space-between;
+}
+
+.cardSpeedial {
+  bottom: 24px;
+  z-index: 5;
+}
+
+.cardMask {
+  background-color: var(--primary-900);
+  border-radius: 15px;
+}
+.p-speeddial-mask-visible {
+  opacity: 0.4;
+}
+
+.p-speeddial-action {
+  color: var(--primary-color);
+  background-color: var(--primary-900);
+  text-decoration: none;
+}
+.p-speeddial-action:hover {
+  color: var(--primary-100);
+}
+.pi-ban {
+  color: var(--red-600);
 }
 
 /* Responsive Styles */
@@ -158,34 +233,24 @@ aside {
   .container {
     padding: 15px;
   }
+
   .header {
     display: none;
   }
-  .sidebarButton,
-  .p-sidebar {
+
+  .sidebarButton {
     display: none;
   }
 }
 
 @media (max-width: 1440px) {
   .main {
-    width: 60vw;
-    margin-left: 20vw;
+    width: 75vw;
+    margin-left: 25vw;
   }
 
-  .asideLeft {
-    width: 20vw;
-  }
-
-  .asideRight {
-    width: 20vw;
-    padding: 15px;
-  }
-
-  .broadenLayout {
-    .main {
-      width: 80vw;
-    }
+  .aside {
+    width: 25vw;
   }
 }
 
@@ -199,14 +264,7 @@ aside {
     margin: 0;
   }
 
-  .broadenLayout {
-    .main {
-      width: 100vw;
-    }
-  }
-
-  .asideLeft,
-  .asideRight {
+  .aside {
     display: none;
   }
 
@@ -216,5 +274,18 @@ aside {
 
   .bigSlider {
     width: 100vw;
+  }
+
+  .queue {
+    display: none;
+  }
+
+  .bigSliderImage {
+    width: 30vw;
+  }
+}
+@media (max-width: 768px) {
+  .bigSliderImage {
+    width: 50vw;
   }
 }

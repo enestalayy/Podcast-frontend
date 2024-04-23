@@ -1,5 +1,5 @@
 <template>
-  <div class="container col-center gap">
+  <div class="col-center gap">
     <MainSlider />
     <PodcastCard />
   </div>

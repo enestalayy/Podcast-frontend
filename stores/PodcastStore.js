@@ -21,15 +21,15 @@ export const usePodcastStore = defineStore("podcastStore", {
   getters: {},
   actions: {
     async getPodcasts() {
-      const nuxtApp = useNuxtApp();
+      // const nuxtApp = useNuxtApp();
       const { data, error } = await useLazyFetch(
-        "https://www.trtdinle.com/api/detail?path=/genre/podcast",
-        {
-          key: "podcasts",
-          getCachedData(key) {
-            return nuxtApp.payload.data[key] || nuxtApp.static.data[key];
-          },
-        }
+        "https://www.trtdinle.com/api/detail?path=/genre/podcast"
+        // {
+        //   key: "podcasts",
+        //   getCachedData(key) {
+        //     return nuxtApp.payload.data[key] || nuxtApp.static.data[key];
+        //   },
+        // }
       );
       if (!error.value) {
         console.log("data :>> ", data.value);

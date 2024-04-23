@@ -1,31 +1,17 @@
 <template>
-  <div class="layout" :class="{ broadenLayout: !showRightAside }">
+  <div class="layout">
     <header class="header">
-      <Navigation />
+      <Header />
     </header>
-    <aside class="asideLeft col-center">
+    <aside class="aside col-center">
       <Menu />
     </aside>
     <main class="main col-center">
       <slot />
-      <PrimeButton
-        v-show="!showRightAside"
-        @click="showRightAside = !showRightAside"
-        :icon="showRightAside ? 'pi pi-arrow-right' : 'pi pi-arrow-left'"
-        class="showPlaylistButton"
-      />
-    </main>
-    <aside class="asideRight col-end">
-      <div class="showRightAside">
-        <PrimeButton
-          v-show="showRightAside"
-          @click="showRightAside = !showRightAside"
-          :icon="showRightAside ? 'pi pi-arrow-right' : 'pi pi-arrow-left'"
-          class="showPlaylistButton"
-        />
+      <div class="queue">
+        <QueueSidebar />
       </div>
-      <Playlist v-show="showRightAside" />
-    </aside>
+    </main>
     <PrimeDialog
       v-model:visible="toggleStore.visible"
       :header="popupComponent.header ? popupComponent.header : ' '"
@@ -49,28 +35,35 @@ import Signup from "~/components/auth/Signup.vue";
 import ForgetPassword from "~/components/auth/ForgetPassword.vue";
 import { useToggleStore } from "@/stores/ToggleStore";
 import { mapState } from "pinia";
-import Navigation from "~/components/layout/Navigation.vue";
+import Header from "~/components/layout/Header.vue";
 import Menu from "~/components/layout/Menu.vue";
-import Playlist from "~/components/podcast/Playlist.vue";
+import QueueSidebar from "~/components/layout/QueueSidebar.vue";
 
 export default {
   data() {
     return {
       toggleStore: useToggleStore(),
-      showRightAside: true,
     };
   },
   components: {
     Login,
     Signup,
     ForgetPassword,
-    Navigation,
+    Header,
     Menu,
-    Playlist,
+    QueueSidebar,
   },
   computed: {
     ...mapState(useToggleStore, ["popupComponent"]),
   },
 };
 </script>
-<style scoped></style>
+
+<style scoped>
+.queue {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: inherit;
+}
+</style>

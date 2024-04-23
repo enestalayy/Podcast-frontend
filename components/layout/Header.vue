@@ -1,9 +1,9 @@
 <template>
-  <nav class="row">
+  <div class="row">
     <MenuSidebar />
     <!-- <SearchBar /> -->
     <QueueSidebar />
-  </nav>
+  </div>
 </template>
 
 <script>
@@ -12,7 +12,7 @@ import QueueSidebar from "./QueueSidebar.vue";
 import SearchBar from "./SearchBar.vue";
 
 export default {
-  name: "Navigation",
+  name: "Header",
   components: {
     MenuSidebar,
     QueueSidebar,
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style scoped>
-nav {
+div {
   justify-content: space-between;
 }
 </style>
