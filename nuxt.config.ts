@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
@@ -27,7 +26,22 @@ export default defineNuxtConfig({
     },
     components: {
       prefix: "Prime",
-      include: "*",
+      include: [
+        "AutoComplete",
+        "Button",
+        "Calendar",
+        "Card",
+        "Dialog",
+        "Divider",
+        "FloatLabel",
+        "InlineMessage",
+        "InputGroup",
+        "InputText",
+        "Message",
+        "Password",
+        "Sidebar",
+        "SpeedDial",
+      ],
     },
   },
   pinia: {
@@ -36,10 +50,26 @@ export default defineNuxtConfig({
   imports: {
     dirs: ["stores"],
   },
-  googleFonts: {
-    families: {
-      Inter: [300, 400, 700],
+
+  image: {
+    quality: 80,
+    format: ["webp", "jpeg"],
+    screens: {
+      xs: 320,
+      sm: 425,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1440,
+      "2xl": 1440,
     },
+    domains: ["cdn-i.pr.trt.com.tr"],
+
+    provider: "ipx",
+    ipx: {},
+  },
+
+  googleFonts: {
     display: "swap",
   },
   css: [

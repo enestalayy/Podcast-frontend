@@ -8,6 +8,7 @@
       icon="pi pi-align-left"
       @click="visible = true"
       text
+      size="large"
     />
   </div>
 </template>

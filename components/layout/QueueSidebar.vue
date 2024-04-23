@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar">
+  <div>
     <PrimeSidebar
       v-model:visible="visible"
       :modal="false"
@@ -13,6 +13,13 @@
       icon="pi pi-align-right"
       @click="visible = true"
       text
+      size="large"
+    />
+    <PrimeButton
+      @click="visible = true"
+      icon="pi pi-align-right"
+      class="showPlaylistButton"
+      size="large"
     />
   </div>
 </template>
@@ -30,3 +37,4 @@ export default {
   },
 };
 </script>
+<style scoped></style>
