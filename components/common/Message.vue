@@ -1,7 +1,7 @@
 <template>
   <div>
     <PrimeMessage :severity="severity">{{
-      messages.message || messages[message] || message
+      messages.message || messages[message] || messages.auth
     }}</PrimeMessage>
   </div>
 </template>

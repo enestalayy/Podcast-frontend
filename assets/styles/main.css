@@ -1,10 +1,11 @@
 .w-full {
   width: 100%;
 }
-
+.w-fit {
+  max-width: fit-content;
+}
 .row {
   display: flex;
-  flex-direction: row;
   align-items: center;
 }
 
@@ -37,11 +38,23 @@
   align-items: center;
 }
 
+.col-stretch {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
 .row-between {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.row-around {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .col-around {
@@ -68,6 +81,17 @@
 
 .pl {
   padding-left: 15px;
+}
+.br {
+  border-radius: 15px;
+}
+
+.word-break {
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 /* General Styles */
@@ -135,6 +159,8 @@ ul {
   width: 100%;
   height: fit-content;
   position: fixed;
+  background: var(--primary-900);
+  z-index: 6;
   top: 0;
 }
 
@@ -156,12 +182,6 @@ ul {
   position: relative;
   margin-left: 15vw;
   transition: all 0.5s;
-  .showPlaylistButton {
-    position: fixed;
-    top: 15px;
-    right: 5px;
-    z-index: 10;
-  }
 }
 
 .p-sidebar {
@@ -180,37 +200,104 @@ ul {
   .p-sidebar {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+    border-width: 0px 0px 0px 2px;
     border-left: 2px solid var(--primary-color);
   }
 }
 
+.footer {
+  width: 85vw;
+  height: fit-content;
+  background-color: var(--surface-0);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  border-top: 2px solid var(--primary-color);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  z-index: 1105;
+  transition: all 0.5s;
+}
+
+.logo {
+  width: 50%;
+  height: auto;
+  fill: var(--primary-color);
+}
+
 /* Home Page */
 
-.p-card-header,
-.p-card-body {
-  height: 50%;
+.cardImage {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  transition: all 0.3s;
+}
+
+.card {
+  width: 240px;
+  max-width: 240px;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+  background: linear-gradient(225deg, var(--primary-900), var(--surface-card))
+    border-box;
+}
+
+.p-card-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardDescription {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .p-card-header {
+  width: 200px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .p-card-body {
-  gap: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem 1rem 0rem 0.5rem;
+  gap: 15px;
   justify-content: space-between;
+  transition: all 0.3s;
 }
 
 .cardSpeedial {
-  bottom: 24px;
+  top: 220px;
+  left: 5px;
   z-index: 5;
 }
 
+.cardPlayButton {
+  transition: all 0.3s;
+}
+
 .cardMask {
-  background-color: var(--primary-900);
+  background-color: var(--surface-ground);
   border-radius: 15px;
 }
+
 .p-speeddial-mask-visible {
   opacity: 0.4;
 }
@@ -220,16 +307,180 @@ ul {
   background-color: var(--primary-900);
   text-decoration: none;
 }
+
 .p-speeddial-action:hover {
   color: var(--primary-100);
 }
+
+.cardSpeedialButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--primary-color);
+  transition: all 0.3s;
+  transform: rotate(90deg);
+}
+
 .pi-ban {
   color: var(--red-600);
+}
+
+.queueSidebar {
+  height: 100%;
+  padding-bottom: 100px;
+}
+
+.playlist {
+}
+
+.searchBar {
+  width: 50%;
+}
+
+.searchButton {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.showAutoComplete {
+  width: 80%;
+  opacity: 1;
+  #autoCompleteInput {
+    border-radius: 6px;
+  }
+}
+
+.hideAutoComplete#autoCompleteInput,
+.hideAutoComplete input {
+  width: 0%;
+  opacity: 0;
+  padding: 0;
+}
+
+.seekBackwardBadge,
+.seekForwardBadge {
+  margin: 0;
+  padding: 0;
+  background: none;
+  color: var(--primary-color);
+  position: absolute;
+  top: 0;
+}
+.seekButton {
+  .p-button-label {
+    width: 0;
+  }
+}
+.seekBackwardBadge {
+  left: 0;
+}
+.seekForwardBadge {
+  right: 0;
+}
+
+.player {
+  width: 30vw;
+  .p-slider-handle {
+    opacity: 0;
+  }
+}
+.playerWrapper:hover {
+  .p-slider-handle {
+    opacity: 1;
+  }
+}
+.zort {
+  width: 50%;
+  animation: zort 10s infinite;
+  color: white;
+  background: red;
+}
+@keyframes zort {
+  0% {
+    background-size: 0% 100%;
+  }
+  50% {
+    background-size: 100% 100%;
+  }
+  100% {
+    background-size: 0% 100%;
+  }
+}
+.playerText {
+  min-width: 32px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playerPodcastInfo {
+  max-width: 30%;
+}
+
+.volumeWrapper {
+  position: relative;
+}
+.volumeSlider {
+  position: absolute;
+  width: 12px;
+  top: 0px;
+  transform: translateY(-100%);
+  height: 0px;
+  opacity: 0;
+
+  .p-slider-range {
+    padding: 0 5px;
+  }
+  .p-slider-handle {
+    display: none !important;
+    width: 0;
+    height: 0;
+    /* opacity: 0; */
+  }
+  .p-slider-handle::before {
+    display: none !important;
+  }
+}
+.volumeWrapper:hover {
+  .volumeSlider {
+    height: 70px;
+    opacity: 1;
+  }
+}
+
+/* Search Page */
+.typeCardContainer {
+  flex-wrap: wrap;
+
+  .typeCardWrapper {
+    position: relative;
+    width: 20%;
+
+    .typeCardImage {
+      width: 100%;
+    }
+
+    .typeCardTitle {
+      width: 100%;
+      position: absolute;
+      text-align: center;
+      top: 60%;
+    }
+  }
 }
 
 /* Responsive Styles */
 
 @media (min-width: 1025px) {
+  .lg-p {
+    padding: 15px;
+  }
+  .lg-gap {
+    gap: 15px;
+  }
+
   .container {
     padding: 15px;
   }
@@ -241,20 +492,80 @@ ul {
   .sidebarButton {
     display: none;
   }
+
+  .cardPlayButton {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    height: 0px;
+    width: 0px;
+    opacity: 0;
+    filter: drop-shadow(0 5px 5px var(--surface-ground));
+  }
+  .playIcon {
+    padding-left: 3px;
+  }
+
+  .card:hover {
+    background: linear-gradient(225deg, var(--primary-800), var(--surface-card))
+      border-box;
+    .cardImage {
+      transform: scale(105%);
+    }
+    .cardPlayButton {
+      width: 45.6px;
+      height: 45.6px;
+      opacity: 1;
+    }
+  }
 }
 
 @media (max-width: 1440px) {
   .main {
-    width: 75vw;
-    margin-left: 25vw;
+    width: 80vw;
+    margin-left: 20vw;
+  }
+  .footer {
+    width: 80vw;
   }
 
   .aside {
-    width: 25vw;
+    width: 20vw;
+  }
+  .player {
+    width: 200px;
   }
 }
 
 @media (max-width: 1024px) {
+  .res-p {
+    padding: 10px;
+  }
+  .res-gap {
+    gap: 10px;
+  }
+
+  .max-lg-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .max-lg-col {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .max-lg-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .max-lg-none {
+    display: none;
+  }
+
   .layout {
     padding-top: 50px;
   }
@@ -263,29 +574,66 @@ ul {
     width: 100vw;
     margin: 0;
   }
-
+  .footer {
+    width: 100vw;
+  }
   .aside {
     display: none;
   }
 
-  .showPlaylistButton {
-    display: none;
-  }
-
-  .bigSlider {
+  .mainSlider {
     width: 100vw;
   }
 
   .queue {
     display: none;
   }
-
-  .bigSliderImage {
-    width: 30vw;
-  }
+  /* .player {
+    width: 50vw;
+  } */
 }
 @media (max-width: 768px) {
-  .bigSliderImage {
-    width: 50vw;
+  .res-p {
+    padding: 8px;
+  }
+  .res-gap {
+    gap: 8px;
+  }
+
+  .queueSidebar {
+    height: 100%;
+  }
+
+  .player {
+    width: 100px;
+  }
+  .playerImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+  }
+  .playerText {
+    font-size: 12px;
+    -webkit-line-clamp: 2;
+  }
+  .playerButton {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (max-width: 425px) {
+  .res-p {
+    padding: 5px;
+  }
+  .res-gap {
+    gap: 5px;
+  }
+
+  .max-sm-none {
+    display: none;
+  }
+
+  .playerText {
+    max-width: 50px;
   }
 }

@@ -4,22 +4,15 @@
       :effect="'cards'"
       :grabCursor="true"
       :modules="modules"
-      class="bigSlider"
+      class="mainSlider"
       :autoplay="autoplay"
     >
       <SwiperSlide
-        v-for="(slide, index) in podcasts.sets[0].contents"
+        v-for="(slide, index) in podcasts.featuredPodcasts.contents"
         :key="index"
-        class="bigSlide"
+        class="mainSlide"
       >
-        <NuxtImg
-          :src="slide.imageUrl"
-          format="webp"
-          alt="image"
-          quality="100"
-          sizes="50vw md:30vw lg:20vw"
-          class="bigSliderImage"
-        />
+        <img :src="slide.imageUrl" alt="image" class="mainSliderImage" />
       </SwiperSlide>
     </Swiper>
   </div>
@@ -29,9 +22,6 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { EffectCards, Autoplay } from "swiper/modules";
 import { mapState } from "pinia";
-import "swiper/css";
-import "swiper/css/effect-cards";
-import "swiper/css/autoplay";
 
 export default {
   name: "MainSlider",
@@ -40,7 +30,7 @@ export default {
     SwiperSlide,
   },
   computed: {
-    ...mapState(usePodcastStore, ["podcasts"]),
+    ...mapState(usePodcastStore, ["podcasts", "pending"]),
   },
   setup() {
     return {
@@ -61,15 +51,16 @@ export default {
   box-shadow: none;
 }
 
-.bigSlider {
+.mainSlider {
   overflow: hidden;
   white-space: nowrap;
 }
-.bigSlide {
+.mainSlide {
   height: auto;
 }
-.bigSliderImage {
+.mainSliderImage {
   width: 20vw;
+  min-width: 250px;
   height: auto;
   border-radius: 15px;
 }

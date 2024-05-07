@@ -2,7 +2,6 @@
   <div class="row">
     <MenuSidebar />
     <!-- <SearchBar /> -->
-    <QueueSidebar />
   </div>
 </template>
 

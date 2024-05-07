@@ -75,7 +75,10 @@ export default {
     ...mapActions(useAuthStore, ["login", "loginWithGoogle"]),
     ...mapActions(useToggleStore, ["setPopupComponent"]),
     async handleLogin() {
-      const { error } = await this.login();
+      const { error } = await this.login({
+        email: this.email,
+        password: this.password,
+      });
       if (error) {
         this.error = error;
       } else {

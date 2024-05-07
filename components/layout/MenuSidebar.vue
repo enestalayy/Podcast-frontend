@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar col-center">
+  <div class="sidebar col">
     <PrimeSidebar v-model:visible="visible" :modal="false" header="Sidebar">
       <Menu />
     </PrimeSidebar>
