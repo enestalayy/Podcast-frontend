@@ -1,5 +1,6 @@
 {
   "AuthApiError: Email rate limit exceeded": "İstek sınırı aşıldı lütfen daha sonra tekrar deneyiniz.",
+  "AuthApiError: Invalid login credentials": "Kullanıcı adı veya şifre yanlış",
   "tryAgain": "Tekrar Dene",
   "pleaseTryAgain": "Lütfen tekrar deneyin",
   "errorOccured": "Bir Hata Oluştu",
@@ -10,7 +11,7 @@
   "auth": {
     "resendConfirmation": "Hesabınız doğrulanamadı lütfen e-postanızı kontrol edin ve tekrar üye olun.",
     "404": "E-posta ve şifreniz eşleşmiyor. Lütfen tekrar deneyin.",
-    "409": "Bu e-posta zaten kullanılıyor. Lütfen başka bir e-posta deneyin veya mevcut hesabınıza giriş yapın.",
+    "409": "Bu e-posta zaten kullanılıyor.",
     "429": "Şu an üyelik taleplerimizde yoğunluk var. Lütfen biraz sonra tekrar deneyin veya Google ile giriş yapın. Anlayışınız için teşekkür ederiz!"
   },
   "400": "İsteğinizde bir hata oluştu. Lütfen tekrar deneyin.",

@@ -1,12 +1,15 @@
 <template>
   <PrimeSpeedDial
-    :id="id + '-' + index"
+    :id="id"
     :model="items"
-    direction="up"
+    direction="right"
+    :radius="60"
+    type="semi-circle"
     :transitionDelay="120"
     :tooltipOptions="{ position: 'right' }"
     mask
     :maskClass="'cardMask'"
+    buttonClass="cardSpeedialButton"
     class="cardSpeedial"
     showIcon="pi pi-ellipsis-v"
     hideIcon="pi pi-times"
@@ -19,10 +22,6 @@ export default {
   name: "CardMenu",
   props: {
     id: {
-      type: Number,
-      required: true,
-    },
-    index: {
       type: Number,
       required: true,
     },

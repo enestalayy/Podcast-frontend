@@ -1,25 +1,26 @@
+<script setup>
+import { useWindowSize } from "@vueuse/core";
+
+const { width, height } = useWindowSize();
+</script>
 <template>
   <div>
     <PrimeSidebar
       v-model:visible="visible"
       :modal="false"
-      position="right"
-      header="Sidebar"
+      :position="width > 1024 ? 'right' : 'bottom'"
+      header="Çalma Listesi"
+      :dismissable="false"
+      class="queueSidebar"
     >
       <Playlist />
     </PrimeSidebar>
     <PrimeButton
-      class="sidebarButton"
-      icon="pi pi-align-right"
       @click="visible = true"
-      text
-      size="large"
-    />
-    <PrimeButton
-      @click="visible = true"
-      icon="pi pi-align-right"
+      icon="pi pi-list"
       class="showPlaylistButton"
       size="large"
+      text
     />
   </div>
 </template>

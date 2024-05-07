@@ -1,25 +1,36 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   modules: [
     ["@pinia/nuxt", { autoImports: ["defineStore", "acceptHMRUpdate"] }],
-    "@nuxt/image",
     "nuxt-primevue",
     "@nuxtjs/supabase",
-    "@nuxtjs/google-fonts",
     "nuxt-swiper",
   ],
+
   experimental: {
     payloadExtraction: true,
   },
+
+  runtimeConfig: {
+    trtBaseUrl: process.env.TRT_BASE_URL,
+    trtPodcastUrl: process.env.TRT_PODCAST_URL,
+    apiUrl: process.env.API_URL,
+    apiUrl1: process.env.API_URL1,
+    jsonServerUrl: process.env.JSON_SERVER_URL,
+  },
+
   supabase: {
     url: process.env.SUPABASE_URL,
     key: process.env.SUPABASE_KEY,
     redirect: false,
   },
+
   components: {
     global: true,
     dirs: ["~/components/common"],
   },
+
   primevue: {
     options: {
       ripple: true,
@@ -41,39 +52,25 @@ export default defineNuxtConfig({
         "Password",
         "Sidebar",
         "SpeedDial",
+        "Skeleton",
+        "ProgressBar",
+        "Slider",
+        "Knob",
+        "Stepper",
       ],
     },
   },
+
   pinia: {
     storesDirs: ["./stores/**"],
   },
+
   imports: {
     dirs: ["stores"],
   },
 
-  image: {
-    quality: 80,
-    format: ["webp", "jpeg"],
-    screens: {
-      xs: 320,
-      sm: 425,
-      md: 768,
-      lg: 1024,
-      xl: 1280,
-      xxl: 1440,
-      "2xl": 1440,
-    },
-    domains: ["cdn-i.pr.trt.com.tr"],
-
-    provider: "ipx",
-    ipx: {},
-  },
-
-  googleFonts: {
-    display: "swap",
-  },
   css: [
-    "primevue/resources/themes/aura-dark-purple/theme.css",
+    "primevue/resources/themes/aura-dark-cyan/theme.css",
     "primeicons/primeicons.css",
     "primevue/resources/primevue.min.css",
     "~/assets/styles/main.css",

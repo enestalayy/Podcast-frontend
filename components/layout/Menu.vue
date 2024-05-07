@@ -1,48 +1,64 @@
 <template>
-  <nav class="col-around menu">
-    <ul class="col">
-      <li>
-        <NuxtLink to="/">
-          <PrimeButton icon="pi pi-home" label="Ana Sayfa" />
-        </NuxtLink>
-      </li>
-      <li>
-        <SearchBar />
-      </li>
-      <li v-if="session">
-        <NuxtLink>
-          <PrimeButton icon="pi pi-user" label="Hesabım" />
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink>
-          <PrimeButton icon="pi pi-book" label="Kitaplık" />
-        </NuxtLink>
-      </li>
-    </ul>
+  <nav class="col-center menu">
     <PrimeInputGroup class="center" v-if="!session">
       <PrimeButton
         @click="setPopupComponent({ header: 'Kayıt ol', name: 'Signup' })"
         label="Kayıt ol"
-        outlined
+        text
       />
       <PrimeButton
         @click="setPopupComponent({ header: 'Giriş yap', name: 'Login' })"
         label="Giriş yap"
+        text
       />
     </PrimeInputGroup>
+
+    <PrimeButton v-else icon="pi pi-sign-out" />
+
+    <Logo />
+
+    <ul class="col-stretch">
+      <li>
+        <NuxtLink to="/">
+          <PrimeButton
+            class="w-full"
+            text
+            icon="pi pi-home"
+            label="Ana Sayfa"
+          />
+        </NuxtLink>
+      </li>
+
+      <li v-if="session">
+        <NuxtLink class="w-full">
+          <PrimeButton icon="pi pi-user" text label="Hesabım" />
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="search">
+          <PrimeButton
+            class="w-full"
+            text
+            icon="pi pi-sparkles"
+            label="Keşfet"
+          />
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink>
+          <PrimeButton class="w-full" text icon="pi pi-book" label="Kitaplık" />
+        </NuxtLink>
+      </li>
+    </ul>
   </nav>
 </template>
 
 <script>
 import { mapActions, mapState } from "pinia";
-import SearchBar from "./SearchBar.vue";
 
 export default {
   name: "Menu",
-  components: {
-    SearchBar,
-  },
+
   computed: {
     ...mapState(useAuthStore, ["session"]),
   },
@@ -55,6 +71,7 @@ export default {
 <style scoped>
 ul {
   gap: 20px;
+  width: 80%;
 }
 .menu {
   height: 100%;

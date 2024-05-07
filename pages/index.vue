@@ -1,20 +1,23 @@
 <template>
   <div class="col-center gap">
     <MainSlider />
-    <PodcastCard />
+    <!-- <Test /> -->
+    <Carousel />
   </div>
 </template>
 
 <script>
 import { mapActions } from "pinia";
 import { useToggleStore } from "@/stores/ToggleStore";
-import PodcastCard from "~/components/podcast/PodcastCard.vue";
+import Carousel from "~/components/podcast/Carousel.vue";
 import MainSlider from "~/components/podcast/MainSlider.vue";
+import Test from "~/components/podcast/test.vue";
 
 export default {
   components: {
-    PodcastCard,
+    Carousel,
     MainSlider,
+    Test,
   },
   methods: {
     ...mapActions(useToggleStore, ["setPopupComponent"]),

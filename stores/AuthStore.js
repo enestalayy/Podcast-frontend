@@ -77,12 +77,19 @@ export const useAuthStore = defineStore("authStore", {
         return 500;
       }
     },
+    async saveUserToDatabase() {
+      await useFetch("/api/auth/login", {
+        method: "POST",
+      });
+    },
     async getSession() {
       const supabase = useSupabaseClient();
 
       const { data, error } = await supabase.auth.getSession();
+      console.log("data :>> ", data);
+      console.log("error :>> ", error);
       if (!error) {
-        this.session = data.value;
+        this.session = data.session;
       }
       return { error };
     },

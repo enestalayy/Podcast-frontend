@@ -3,15 +3,19 @@
     <header class="header">
       <Header />
     </header>
+
     <aside class="aside col-center">
       <Menu />
     </aside>
+
     <main class="main col-center">
       <slot />
-      <div class="queue">
-        <QueueSidebar />
-      </div>
     </main>
+
+    <footer class="footer">
+      <Footer />
+    </footer>
+
     <PrimeDialog
       v-model:visible="toggleStore.visible"
       :header="popupComponent.header ? popupComponent.header : ' '"
@@ -37,7 +41,7 @@ import { useToggleStore } from "@/stores/ToggleStore";
 import { mapState } from "pinia";
 import Header from "~/components/layout/Header.vue";
 import Menu from "~/components/layout/Menu.vue";
-import QueueSidebar from "~/components/layout/QueueSidebar.vue";
+import Footer from "~/components/layout/Footer.vue";
 
 export default {
   data() {
@@ -51,19 +55,13 @@ export default {
     ForgetPassword,
     Header,
     Menu,
-    QueueSidebar,
+    Footer,
   },
   computed: {
     ...mapState(useToggleStore, ["popupComponent"]),
+    ...mapState(usePodcastStore, ["currentEpisode"]),
   },
 };
 </script>
 
-<style scoped>
-.queue {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: inherit;
-}
-</style>
+<style scoped></style>
