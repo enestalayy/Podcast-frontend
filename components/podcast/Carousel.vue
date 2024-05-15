@@ -1,6 +1,5 @@
 <template>
   <div class="col-center gap w-full">
-    <p ref="zort" id="zort">XX</p>
     <div
       v-show="index <= indexToShowSlide"
       v-for="(set, index) in podcasts.sets"
@@ -39,24 +38,6 @@ export default {
   methods: {
     scroll() {
       window.onscroll = () => {
-        var element = document.getElementById("zort");
-
-        var distanceFromTop = element.offsetTop;
-
-        var parent = element.offsetParent;
-        while (parent !== null) {
-          distanceFromTop += parent.offsetTop;
-          parent = parent.offsetParent;
-        }
-
-        distanceFromTop -= window.pageYOffset;
-
-        console.log(
-          "Ekranın üstünden elemanın üst kenarına olan mesafe: " +
-            distanceFromTop +
-            " piksel"
-        );
-
         const scrollPosition =
           Math.max(
             window.pageYOffset,

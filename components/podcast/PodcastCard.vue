@@ -4,15 +4,15 @@
       <img
         width="200"
         height="200"
-        :src="content.imageUrl"
+        :src="content.imageUrl ? content.imageUrl : '/defaultCardImage.webp'"
         :alt="content.title"
         class="cardImage"
       />
     </template>
     <template #content>
       <p class="cardDescription" v-text="content.description" />
-      <div class="center">
-        <CardMenu :id="content.id" :index="index" />
+      <div v-show="index >= 0" class="center">
+        <CardMenu :id="content.id" />
         <PrimeButton
           @click="getPodcast(content.path)"
           icon="pi pi-play"
@@ -41,7 +41,7 @@ export default {
 
     index: {
       type: Number,
-      required: true,
+      required: false,
     },
   },
   components: {

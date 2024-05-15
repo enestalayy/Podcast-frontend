@@ -1,0 +1,16 @@
+{
+  "categories": [
+    { "name": "Din ve Yaşam", "path": "din-ve-yasam" },
+    { "name": "Aile ve Çocuk", "path": "aile-ve-cocuk" },
+    { "name": "Haber", "path": "haber" },
+    { "name": "Tarih", "path": "tarih-8687" },
+    { "name": "Söyleşi", "path": "soylesi" },
+    { "name": "Biyografi", "path": "biyografi" },
+    { "name": "Sanat", "path": "sanat" },
+    { "name": "Edebiyat", "path": "edebiyat" },
+    { "name": "Müzik", "path": "muzik-7134" },
+    { "name": "Genel Kültür", "path": "genel-kultur" },
+    { "name": "Teknoloji", "path": "teknoloji" },
+    { "name": "Spor", "path": "spor" }
+  ]
+}
