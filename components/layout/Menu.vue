@@ -1,22 +1,8 @@
 <template>
-  <nav class="col-center menu">
-    <PrimeInputGroup class="center" v-if="!session">
-      <PrimeButton
-        @click="setPopupComponent({ header: 'Kayıt ol', name: 'Signup' })"
-        label="Kayıt ol"
-        text
-      />
-      <PrimeButton
-        @click="setPopupComponent({ header: 'Giriş yap', name: 'Login' })"
-        label="Giriş yap"
-        text
-      />
-    </PrimeInputGroup>
-
-    <PrimeButton v-else icon="pi pi-sign-out" />
-
-    <Logo />
-
+  <nav class="col-between pb menu">
+    <NuxtLink to="/" class="w-full center">
+      <Logo />
+    </NuxtLink>
     <ul class="col-stretch">
       <li>
         <NuxtLink to="/">
@@ -30,8 +16,8 @@
       </li>
 
       <li v-if="session">
-        <NuxtLink class="w-full">
-          <PrimeButton icon="pi pi-user" text label="Hesabım" />
+        <NuxtLink to="/user">
+          <PrimeButton icon="pi pi-user" text label="Hesabım" class="w-full" />
         </NuxtLink>
       </li>
       <li>
@@ -50,6 +36,26 @@
         </NuxtLink>
       </li>
     </ul>
+    <PrimeInputGroup class="center" v-if="!session">
+      <PrimeButton
+        @click="setPopupComponent({ header: 'Kayıt ol', name: 'Signup' })"
+        label="Kayıt ol"
+        text
+      />
+      <PrimeButton
+        @click="setPopupComponent({ header: 'Giriş yap', name: 'Login' })"
+        label="Giriş yap"
+        text
+      />
+    </PrimeInputGroup>
+
+    <PrimeButton
+      v-else
+      icon="pi pi-sign-out"
+      class="w-full"
+      text
+      label="Çıkış yap"
+    />
   </nav>
 </template>
 

@@ -1,14 +1,31 @@
 .w-full {
   width: 100%;
 }
+
+.h-full {
+  height: 100%;
+}
+.min-h-dialog {
+  min-height: 320px;
+}
+
 .w-fit {
   max-width: fit-content;
 }
+
+.font-32 {
+  font-size: 32px;
+}
+
 .row {
   display: flex;
   align-items: center;
 }
-
+.reversed {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
 .col {
   display: flex;
   flex-direction: column;
@@ -62,6 +79,16 @@
   flex-direction: column;
   justify-content: space-around;
 }
+.col-between {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gap-25 {
+  gap: 25px;
+}
 
 .gap {
   gap: 15px;
@@ -82,8 +109,15 @@
 .pl {
   padding-left: 15px;
 }
+.pb {
+  padding-bottom: 15px;
+}
 .br {
   border-radius: 15px;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 
 .word-break {
@@ -129,7 +163,18 @@ ul {
 }
 
 .p-dialog {
+  width: 500px;
+  height: 500px;
   max-height: 100%;
+  max-width: 100%;
+}
+
+.p-dialog-content {
+  height: 420px;
+}
+
+.p-stepper-nav {
+  padding-bottom: 15px;
 }
 
 .swiper-slide-shadow {
@@ -144,6 +189,16 @@ ul {
   width: inherit;
   max-width: 100%;
   padding: 20px 0 !important;
+}
+
+.p-stepper-horizontal {
+  height: 100%;
+  .p-stepper-panels {
+    min-height: 320px;
+    .p-stepper-content {
+      min-height: 320px;
+    }
+  }
 }
 
 /* Layout */
@@ -389,23 +444,7 @@ ul {
     opacity: 1;
   }
 }
-.zort {
-  width: 50%;
-  animation: zort 10s infinite;
-  color: white;
-  background: red;
-}
-@keyframes zort {
-  0% {
-    background-size: 0% 100%;
-  }
-  50% {
-    background-size: 100% 100%;
-  }
-  100% {
-    background-size: 0% 100%;
-  }
-}
+
 .playerText {
   min-width: 32px;
   display: -webkit-box;
@@ -471,6 +510,24 @@ ul {
   }
 }
 
+/* Profile Page */
+
+.p-stepper-nav {
+  z-index: 1;
+}
+
+.maksLength {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 12px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+.p-fileupload {
+  width: 100%;
+}
 /* Responsive Styles */
 
 @media (min-width: 1025px) {
@@ -600,6 +657,19 @@ ul {
     gap: 8px;
   }
 
+  .popupComponent {
+    height: 100%;
+  }
+  .createPodcastStepper {
+    height: 100%;
+    .p-stepper-number {
+      width: 16px;
+      height: 16px;
+      min-width: 14px;
+      font-size: 0.7rem;
+    }
+  }
+
   .queueSidebar {
     height: 100%;
   }
@@ -635,5 +705,14 @@ ul {
 
   .playerText {
     max-width: 50px;
+  }
+
+  .createPodcastStepper {
+    .p-stepper-number {
+      display: none;
+    }
+    .p-stepper-title {
+      font-size: 0.7rem;
+    }
   }
 }

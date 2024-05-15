@@ -4,7 +4,7 @@
 
 <script>
 import { mapState } from "pinia";
-import AudioPlayer from "../podcast/AudioPlayer.vue";
+import AudioPlayer from "../audio/AudioPlayer.vue";
 
 export default {
   name: "Footer",

@@ -26,9 +26,7 @@
         },
       }"
     >
-      <div>
-        <component class="popupComponent" :is="popupComponent.name" />
-      </div>
+      <component class="popupComponent" :is="popupComponent.name" />
     </PrimeDialog>
   </div>
 </template>
@@ -42,7 +40,8 @@ import { mapState } from "pinia";
 import Header from "~/components/layout/Header.vue";
 import Menu from "~/components/layout/Menu.vue";
 import Footer from "~/components/layout/Footer.vue";
-
+import CreatePodcast from "~/components/user/CreatePodcast.vue";
+import CreateEpisode from "~/components/user/CreateEpisode.vue";
 export default {
   data() {
     return {
@@ -56,6 +55,8 @@ export default {
     Header,
     Menu,
     Footer,
+    CreatePodcast,
+    CreateEpisode,
   },
   computed: {
     ...mapState(useToggleStore, ["popupComponent"]),

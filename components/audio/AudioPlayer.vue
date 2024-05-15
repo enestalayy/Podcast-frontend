@@ -92,21 +92,18 @@ export default {
       audioDuration: null,
       currentTime: null,
       isPlaying: false,
-      volume: 100,
+      volume: null,
       isMuted: false,
     };
   },
 
   computed: {
     ...mapState(usePodcastStore, ["currentPodcast", "currentEpisode"]),
-    // audio() {
-    //   return new Audio(this.currentEpisode.audio.downloadUrl);
-    // },
   },
   created() {
     this.audio = new Audio(this.currentEpisode.audio.downloadUrl);
   },
-  mounted: function () {
+  mounted() {
     this.currentTime = this.audio.currentTime;
     this.volume = this.audio.volume * 100;
     this.isMuted = this.audio.muted;
@@ -121,10 +118,6 @@ export default {
         : `${minutes}:${seconds.toString().padStart(2, "0")}`;
     },
     setCurrentTime() {
-      // var diff = Math.abs(this.currentTime - this.audio.currentTime);
-      // if (diff > 0.01) {
-      //   this.audio.currentTime = this.currentTime;
-      // }
       this.audio.currentTime = this.currentTime;
     },
     setVolume() {
@@ -145,10 +138,6 @@ export default {
     },
     playbackListener(e) {
       this.currentTime = this.audio.currentTime;
-
-      //Add listeners for audio pause and audio end events
-      // audio.addEventListener("ended", this.endListener);
-      // audio.addEventListener("pause", this.pauseListener);
     },
     seekForward() {
       this.audio.currentTime += 10;
@@ -167,12 +156,6 @@ export default {
         this.audio.removeEventListener("timeupdate", this.playbackListener);
       }
     },
-    // currentTime(newValue) {
-    //   var diff = Math.abs(newValue - this.audio.currentTime);
-    //   if (diff > 0.01) {
-    //     this.audio.currentTime = newValue;
-    //   }
-    // },
   },
 };
 </script>

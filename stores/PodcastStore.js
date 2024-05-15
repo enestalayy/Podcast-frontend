@@ -6,20 +6,6 @@ export const usePodcastStore = defineStore("podcastStore", {
     currentPodcast: null,
     currentEpisode: null,
     pending: false,
-    types: [
-      "din-ve-yasam",
-      "aile-ve-cocuk",
-      "haber",
-      "tarih-8687",
-      "soylesi",
-      "biyografi",
-      "sanat",
-      "edebiyat",
-      "muzik-7134",
-      "genel-kultur",
-      "teknoloji",
-      "spor",
-    ],
   }),
   getters: {},
   actions: {
@@ -61,6 +47,22 @@ export const usePodcastStore = defineStore("podcastStore", {
         this.currentPodcast = data.value;
         this.currentEpisode = data.value.items[0];
       }
+    },
+    async createPodcast(podcast) {
+      const { podcastName, podcastCategory, podcastDescription, file } =
+        podcast;
+      const { data, error, pending } = await useFetch("/api/aws/emptyPodcast", {
+        method: "POST",
+        body: {
+          podcastName,
+          podcastCategory,
+          podcastDescription,
+          file,
+        },
+      });
+      if (!error) {
+        console.log("Başarılı:", data);
+      } else console.error(error.value);
     },
   },
 });
