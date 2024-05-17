@@ -2,6 +2,7 @@
   <div class="col-center gap w-full">
     <div
       v-show="index <= indexToShowSlide"
+      v-if="podcasts"
       v-for="(set, index) in podcasts.sets"
       :key="set.id"
       class="col w-full py pl"
