@@ -22,8 +22,7 @@
   </div>
 </template>
 <script>
-import { compress } from "image-conversion";
-
+import pkg from "image-conversion";
 export default {
   name: "UploadImage",
   data() {
@@ -36,6 +35,7 @@ export default {
   },
   methods: {
     async resizeImg(event) {
+      const { compress } = pkg;
       const fr = new FileReader();
       const file = event.target.files[0];
       const compressedImage = await compress(file, {
