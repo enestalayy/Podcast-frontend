@@ -1,5 +1,6 @@
 <template>
   <div class="col-center">
+    {{ console.log("podcasts :>> ", podcasts) }}
     <Swiper
       :effect="'cards'"
       :grabCursor="true"
@@ -8,6 +9,7 @@
       :autoplay="autoplay"
     >
       <SwiperSlide
+        v-if="podcasts"
         v-for="(slide, index) in podcasts.featuredPodcasts.contents"
         :key="index"
         class="mainSlide"
