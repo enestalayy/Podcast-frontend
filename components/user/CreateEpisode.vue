@@ -49,7 +49,9 @@
               class="w-full pb"
             />
             <label for="episodeDescription">Bölüm Açıklaması*</label>
-            <p class="maksLength">{{ episodeDescription.length }} / 200</p>
+            <p class="maksLength">
+              {{ episodeDescription ? episodeDescription.length : 0 }} / 200
+            </p>
           </PrimeFloatLabel>
           <div class="w-full reversed">
             <PrimeButton @click="nextCallback" label="İleri" text />

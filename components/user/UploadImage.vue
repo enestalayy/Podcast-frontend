@@ -21,8 +21,13 @@
     />
   </div>
 </template>
+
 <script>
-import pkg from "image-conversion";
+// import pkg from "image-conversion";
+// const { compress } = pkg;
+// const imageConversion = require("image-conversion");
+import * as imageConversion from "image-conversion";
+console.log("imageConversion :>> ", imageConversion.compress);
 export default {
   name: "UploadImage",
   data() {
@@ -35,10 +40,9 @@ export default {
   },
   methods: {
     async resizeImg(event) {
-      const { compress } = pkg;
       const fr = new FileReader();
       const file = event.target.files[0];
-      const compressedImage = await compress(file, {
+      const compressedImage = await imageConversion.compress(file, {
         quality: 0.8,
         type: "image/webp",
         width: 200,
