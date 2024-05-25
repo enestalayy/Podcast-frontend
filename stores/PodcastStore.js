@@ -3,8 +3,10 @@ import { defineStore } from "pinia";
 export const usePodcastStore = defineStore("podcastStore", {
   state: () => ({
     podcasts: null,
-    currentPodcast: null,
+    playlist: null,
     currentEpisode: null,
+    uploadedFile: null,
+    uploadedFileUrl: null,
     pending: false,
   }),
   getters: {},
@@ -21,8 +23,6 @@ export const usePodcastStore = defineStore("podcastStore", {
         }
       );
       this.pending = pending.value;
-      console.log("data :>> ", data);
-      console.log("error :>> ", error);
       if (!error.value) {
         this.podcasts = data.value;
 
@@ -32,7 +32,7 @@ export const usePodcastStore = defineStore("podcastStore", {
         return error;
       }
     },
-    async getPodcast(path) {
+    async getPlaylist(path) {
       // const nuxtApp = useNuxtApp();
       const { data, error } = await useAsyncData(
         () => $fetch(`/api/podcast${path}`),
@@ -44,25 +44,62 @@ export const usePodcastStore = defineStore("podcastStore", {
         }
       );
       if (!error.value) {
-        this.currentPodcast = data.value;
+        this.playlist = data.value;
         this.currentEpisode = data.value.items[0];
       }
     },
     async createPodcast(podcast) {
-      const { podcastName, podcastCategory, podcastDescription, file } =
-        podcast;
+      const { formData } = podcast;
       const { data, error, pending } = await useFetch("/api/aws/emptyPodcast", {
         method: "POST",
-        body: {
-          podcastName,
-          podcastCategory,
-          podcastDescription,
-          file,
-        },
+        body: formData,
       });
-      if (!error) {
-        console.log("Başarılı:", data);
+      return { data, error };
+    },
+    async deletePodcast(podcastId) {
+      const { data, error, pending } = await useFetch(`/api/aws/${podcastId}`, {
+        method: "DELETE",
+      });
+      console.log("data :>> ", data);
+      console.log("error :>> ", error);
+    },
+    async createEpisode(prop) {
+      const { formData, podcastId } = prop;
+      formData.append("files", this.uploadedFile);
+      const { data, error } = useFetch(`/api/aws/addEpisode/${podcastId}`, {
+        method: "POST",
+        body: formData,
+      });
+      if (!error.value) {
+        this.$toast.add({
+          severity: "success",
+          summary: "Bölüm başarıyla oluşturuldu",
+          detail: `${data.value.name} başlıklı bölümünüz eklendi.`,
+          life: 4000,
+        });
       } else console.error(error.value);
+    },
+
+    async updateEpisode(prop) {
+      const { formData, podcastId } = prop;
+      this.uploadedFile && formData.append("files", this.uploadedFile);
+      // // const { data, error } = useFetch(`/api/aws/addEpisode/${podcastId}`, {
+      //   method: "POST",
+      //   body: formData,
+      // });
+      if (!error.value) {
+        this.$toast.add({
+          severity: "success",
+          summary: "Bölüm başarıyla güncellendi",
+          detail: `${data.value.name} başlıklı bölümünüz güncellendi.`,
+          life: 4000,
+        });
+      } else console.error(error.value);
+    },
+
+    readFile(file) {
+      this.uploadedFile = file;
+      this.uploadedFileUrl = URL.createObjectURL(file);
     },
   },
 });

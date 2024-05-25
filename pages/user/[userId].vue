@@ -4,12 +4,22 @@ const { userId } = route.params;
 </script>
 <template>
   <div>
-    {{ userId }}
+    <UsersPageComponent />
   </div>
 </template>
 
 <script>
-export default {};
+import UsersPageComponent from "~/components/user/UsersPageComponent.vue";
+
+export default {
+  name: userId,
+  methods: {
+    ...mapActions(useUserStore, ["getProfilePodcasts"]),
+  },
+  created() {
+    this.getProfilePodcasts();
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>

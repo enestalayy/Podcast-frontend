@@ -12,7 +12,7 @@ export default {
     AudioPlayer,
   },
   computed: {
-    ...mapState(usePodcastStore, ["currentEpisode", "currentPodcast"]),
+    ...mapState(usePodcastStore, ["currentEpisode", "playlist"]),
   },
 };
 </script>

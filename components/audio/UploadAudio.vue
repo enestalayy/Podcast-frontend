@@ -5,25 +5,18 @@
     :maxFileSize="100000000"
     label="Ses Dosyası Yükle"
     mode="advanced"
-    @input="saveAudioToLocal"
+    @change="deneme"
   >
-    <template
-      #header="{ chooseCallback, uploadCallback, clearCallback, files }"
-    >
+    <template #header="{ chooseCallback, clearCallback, files }">
       <div class="w-full center gap relative">
         <PrimeButton
           @click="showRecorder ? toggleShowRecorder() : chooseCallback()"
           :icon="showRecorder ? 'pi pi-angle-left' : 'pi pi-file-import'"
-          rounded
+          label="Ses yükle"
+          :disabled="files[0]"
           outlined
         />
-        <PrimeButton
-          @click="uploadCallback"
-          icon="pi pi-upload"
-          :disabled="!files || files.length === 0"
-          rounded
-          outlined
-        />
+
         <PrimeButton
           @click="clearCallback"
           icon="pi pi-times"
@@ -34,15 +27,12 @@
         />
       </div>
     </template>
-    <template
-      #content="{
-        files,
-        uploadedFiles,
-        removeUploadedFileCallback,
-        removeFileCallback,
-      }"
-    >
-      <div v-if="files && files.length !== 0"></div>
+    <template #content="{ files }">
+      <div v-if="files && files[0]">
+        {{ readFile(files[0]) }}
+        <p v-text="files[0].name" />
+        <p>{{ (files[0].size / 1000000).toFixed(2) }} MB</p>
+      </div>
       <div v-else-if="showRecorder" class="col-center">
         <AudioRecorder v-if="stream" :stream="stream" />
       </div>
@@ -61,6 +51,7 @@
 </template>
 
 <script>
+import { mapActions } from "pinia";
 import AudioRecorder from "../audio/AudioRecorder.vue";
 
 export default {
@@ -76,6 +67,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(usePodcastStore, ["readFile"]),
     getUserMedia() {
       navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
         this.stream = stream;
@@ -85,18 +77,30 @@ export default {
     toggleShowRecorder() {
       this.showRecorder = !this.showRecorder;
     },
-    saveAudioToLocal(event) {
-      const file = event.target.files[0];
-      const audioUrl = URL.createObjectURL(file);
-      localStorage.setItem("audioUrl", audioUrl);
+    handleFileUpload(event) {
+      console.log("event :>> ", event);
+      const files = event;
+      if (files.length > 0) {
+        const file = files[0];
+      }
     },
   },
 };
 </script>
 
 <style scoped>
+/* İsteğe bağlı stiller */
+</style>
+
+<style scoped>
 .relative {
   position: relative;
   z-index: 2;
+}
+.p-fileupload {
+  min-height: 250px;
+}
+.p-fileupload-content {
+  min-height: 150px;
 }
 </style>

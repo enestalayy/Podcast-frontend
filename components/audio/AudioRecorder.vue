@@ -3,7 +3,7 @@
     <Logo
       style="
         position: absolute;
-        bottom: 0;
+        top: 0;
         left: 25%;
         transition: all 0.1s;
         z-index: 0;
@@ -14,19 +14,24 @@
         filter: `brightness(${scale * 2}%)`,
       }"
     />
-    <div class="w-full center gap relative">
-      <PrimeButton
-        @click="handleRecordAudio"
-        :icon="isRecording ? 'pi pi-pause' : 'pi pi-microphone'"
-        rounded
-        outlined
-      />
-      <p>{{ currentTime }}</p>
+    <div class="col w-full center gap relative">
+      <Message :message="'Sayfa yenilendiğinde tüm veriler kaybolacaktır'" />
+      <div class="row gap">
+        <PrimeButton
+          @click="handleRecordAudio"
+          :icon="isRecording ? 'pi pi-pause' : 'pi pi-microphone'"
+          rounded
+          outlined
+        />
+        <p>{{ currentTime }}</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from "pinia";
+
 export default {
   name: "AudioRecorder",
   props: {
@@ -47,6 +52,7 @@ export default {
   },
 
   methods: {
+    ...mapActions(usePodcastStore, ["readFile"]),
     handleRecordAudio() {
       if (this.isRecording) {
         setTimeout(() => {}, 200);
@@ -76,8 +82,7 @@ export default {
           const concatenatedBlob = new Blob(this.audioChunks, {
             type: "audio/webm;codecs=opus",
           });
-          const blobUrl = URL.createObjectURL(concatenatedBlob);
-          localStorage.setItem("audioUrl", blobUrl);
+          this.readFile(concatenatedBlob);
         });
       }
     },

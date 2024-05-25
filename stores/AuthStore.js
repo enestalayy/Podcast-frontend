@@ -5,11 +5,22 @@ export const useAuthStore = defineStore("authStore", {
     // Supabase sadece data ve error dönüyor bu yüzden pending oluşturuyoruz.
     pending: false,
     session: null,
+    birthDate: null,
   }),
   getters: {},
   actions: {
     async signup(payload) {
-      const { name, surname, email, password, birthDate } = payload;
+      const { name, surname, email, password } = payload;
+      const userData = {
+        name,
+        surname,
+        isPremium: false,
+      };
+
+      // Eğer birthDate varsa, userData'ya ekleyin
+      if (this.birthDate) {
+        userData.birthDate = this.birthDate;
+      }
       const supabase = useSupabaseClient();
       this.penging = true;
       try {
@@ -17,12 +28,7 @@ export const useAuthStore = defineStore("authStore", {
           email,
           password,
           options: {
-            data: {
-              name,
-              surname,
-              birthDate,
-              isPremium: false,
-            },
+            data: userData,
           },
         });
         this.pending = false;
@@ -77,21 +83,42 @@ export const useAuthStore = defineStore("authStore", {
         return 500;
       }
     },
-    async saveUserToDatabase() {
-      await useFetch("/api/auth/login", {
-        method: "POST",
-      });
+
+    async signOut() {
+      const supabase = useSupabaseClient();
+      const { error } = await supabase.auth.signOut();
+      this.session = null;
+      return { error };
     },
+
     async getSession() {
       const supabase = useSupabaseClient();
 
       const { data, error } = await supabase.auth.getSession();
-      console.log("data :>> ", data);
-      console.log("error :>> ", error);
+
       if (!error) {
+        console.log("data :>> ", data);
         this.session = data.session;
       }
       return { error };
+    },
+    async updateEmail(newEmail) {
+      const supabase = useSupabaseClient();
+      const { data, error } = await supabase.auth.updateUser({
+        email: newEmail,
+      });
+      console.log("data :>> ", data);
+      console.log("error :>> ", error);
+      return { data, error };
+    },
+    async updateBirthDate() {
+      const supabase = useSupabaseClient();
+      if (this.birthDate) {
+        const { error } = await supabase.auth.updateUser({
+          data: { birthDate: this.birthDate },
+        });
+        return { error };
+      } else return;
     },
   },
 });

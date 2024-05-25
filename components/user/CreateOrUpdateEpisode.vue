@@ -7,20 +7,20 @@
             <PrimeDropdown
               v-model="selectedPodcast"
               inputId="selectPodcast"
-              :options="podcasts"
+              :options="profilePodcasts"
               optionLabel="name"
               emptyMessage="Henüz bir Podcast paylaşılmamış"
               class="w-full"
             />
             <label for="selectPodcast">Podcast Seç</label>
           </PrimeFloatLabel>
-
+          {{ console.log("selectedPodcast >> ", selectedPodcast) }}
           <PrimeFloatLabel>
             <PrimeInputText
               v-model="episodeTitle"
               id="episodeTitle"
               @blur="
-                setToLocalStorage({
+                setItem({
                   key: 'episodeTitle',
                   value: episodeTitle,
                 })
@@ -38,7 +38,7 @@
               rows="6"
               autocapitalize="on"
               @blur="
-                setToLocalStorage({
+                setItem({
                   key: 'episodeDescription',
                   value: episodeDescription,
                 })
@@ -61,7 +61,7 @@
     </PrimeStepperPanel>
     <PrimeStepperPanel header="Ses yükle">
       <template #content="{ prevCallback, nextCallback }">
-        <div class="col gap w-full h-full">
+        <div class="col-between gap w-full min-h-dialog">
           <UploadAudio />
 
           <div class="row-between">
@@ -72,12 +72,16 @@
       </template>
     </PrimeStepperPanel>
     <PrimeStepperPanel header="Önizle">
-      <template #content="{ prevCallback, nextCallback }">
+      <template #content="{ prevCallback }">
         <div class="col-between min-h-dialog">
           <ReviewEpisode :episode="{ episodeTitle, episodeDescription }" />
           <div class="row-between">
             <PrimeButton @click="prevCallback" label="Geri" text />
-            <PrimeButton @click="nextCallback" label="Paylaş" text />
+            <PrimeButton
+              @click="prop ? handleUpdateEpisode : handleCreateEpisode"
+              :label="prop ? 'Güncelle' : 'Paylaş'"
+              text
+            />
           </div>
         </div>
       </template>
@@ -86,14 +90,21 @@
 </template>
 
 <script>
+import { mapActions, mapState } from "pinia";
 import UploadAudio from "../audio/UploadAudio.vue";
 import ReviewEpisode from "./ReviewEpisode.vue";
 
 export default {
-  name: "CreateEpisode",
+  name: "CreateOrUpdateEpisode",
   components: {
     UploadAudio,
     ReviewEpisode,
+  },
+  props: {
+    prop: {
+      type: Object,
+      required: false,
+    },
   },
   data() {
     return {
@@ -104,24 +115,66 @@ export default {
       error: null,
     };
   },
+  computed: {
+    ...mapState(useUserStore, ["profilePodcasts"]),
+  },
   methods: {
-    handleCreateEpisode() {
+    ...mapActions(usePodcastStore, ["createEpisode", "updateEpisode"]),
+    async handleCreateEpisode() {
       if (this.episodeTitle.length < 2 || this.episodeDescription.length < 20) {
         this.error = "Lütfen zorunlu alanları doldurunuz";
         console.log("this.error :>> ", this.error);
       } else {
+        const formData = new FormData();
+        formData.append("episodeName", this.episodeTitle);
+        formData.append("episodeDescription", this.episodeDescription);
+        formData.append("podcastName", this.selectedPodcast.name);
+        await this.createEpisode({
+          formData,
+          podcastId: this.selectedPodcast._id,
+        });
       }
     },
-    setToLocalStorage(obj) {
+    async handleUpdateEpisode() {
+      if (this.episodeTitle.length < 2 || this.episodeDescription.length < 20) {
+        this.error = "Lütfen zorunlu alanları doldurunuz";
+        console.log("this.error :>> ", this.error);
+      } else {
+        const formData = new FormData();
+        prop.title !== this.episodeTitle &&
+          formData.append("episodeName", this.episodeTitle);
+        prop.description !== this.episodeDescription &&
+          formData.append("episodeDescription", this.episodeDescription);
+        prop.podcastId !== this.selectedPodcast.id &&
+          formData.append("podcastName", this.selectedPodcast.name);
+        await this.updateEpisode({
+          formData,
+          podcastId: this.selectedPodcast._id,
+        });
+      }
+    },
+    setItem(obj) {
       const { key, value } = obj;
       localStorage.setItem(key, value);
     },
   },
   mounted() {
-    this.episodeTitle = localStorage.getItem("episodeTitle");
-    this.episodeDescription = localStorage.getItem("episodeDescription");
+    if (this.prop) {
+      this.episodeTitle = this.prop.title;
+      this.episodeDescription = this.prop.description;
+      // this.selectedPodcast = this.profilePodcasts.find((e) => {
+      //   e.id === this.prop.podcastId;
+      // });
+    } else {
+      this.episodeTitle = localStorage.getItem("episodeTitle");
+      this.episodeDescription = localStorage.getItem("episodeDescription");
+    }
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.p-fileupload {
+  width: 100%;
+}
+</style>

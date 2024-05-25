@@ -2,7 +2,7 @@
   <div class="row-between p res-p gap res-gap">
     <div class="playerPodcastInfo row gap res-gap">
       <img
-        :src="currentPodcast.imageUrl"
+        :src="playlist.imageUrl"
         alt="image"
         width="70"
         height="70"
@@ -98,7 +98,7 @@ export default {
   },
 
   computed: {
-    ...mapState(usePodcastStore, ["currentPodcast", "currentEpisode"]),
+    ...mapState(usePodcastStore, ["playlist", "currentEpisode"]),
   },
   created() {
     this.audio = new Audio(this.currentEpisode.audio.downloadUrl);

@@ -13,10 +13,9 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    apiUrl: process.env.API_URL,
     trtBaseUrl: process.env.TRT_BASE_URL,
     trtPodcastUrl: process.env.TRT_PODCAST_URL,
-    apiUrl: process.env.API_URL,
-    apiUrl1: process.env.API_URL1,
     jsonServerUrl: process.env.JSON_SERVER_URL,
   },
 
@@ -38,6 +37,7 @@ export default defineNuxtConfig({
     components: {
       prefix: "Prime",
       include: [
+        "Avatar",
         "AutoComplete",
         "Button",
         "Calendar",
@@ -62,6 +62,10 @@ export default defineNuxtConfig({
         "Textarea",
         "MultiSelect",
         "Dropdown",
+        "Badge",
+        "Toast",
+        "Panel",
+        "Menu",
       ],
     },
   },
