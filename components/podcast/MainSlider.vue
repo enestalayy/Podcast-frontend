@@ -1,6 +1,5 @@
 <template>
   <div class="col-center">
-    {{ console.log("podcasts :>> ", podcasts) }}
     <Swiper
       :effect="'cards'"
       :grabCursor="true"

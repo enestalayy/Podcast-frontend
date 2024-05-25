@@ -4,7 +4,7 @@
       <img
         width="200"
         height="200"
-        :src="content.imageUrl ? content.imageUrl : '/defaultCardImage.webp'"
+        :src="content.imageUrl"
         :alt="content.title"
         class="cardImage"
       />
@@ -12,9 +12,9 @@
     <template #content>
       <p class="cardDescription" v-text="content.description" />
       <div v-show="index >= 0" class="center">
-        <CardMenu :id="content.id" />
+        <CardMenu v-if="content.id" :id="content.id" />
         <PrimeButton
-          @click="getPodcast(content.path)"
+          @click="getPlaylist(content.path)"
           icon="pi pi-play"
           aria-label="Oynat"
           class="cardPlayButton"
@@ -36,7 +36,19 @@ export default {
   props: {
     content: {
       type: Object,
-      required: true,
+      required: false,
+      title: {
+        type: String,
+        required: false,
+      },
+      description: {
+        type: String,
+        required: false,
+      },
+      imageUrl: {
+        type: String,
+        required: false,
+      },
     },
 
     index: {
@@ -48,7 +60,7 @@ export default {
     CardMenu,
   },
   methods: {
-    ...mapActions(usePodcastStore, ["getPodcast"]),
+    ...mapActions(usePodcastStore, ["getPlaylist"]),
   },
 };
 </script>

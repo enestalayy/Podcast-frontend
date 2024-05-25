@@ -7,9 +7,10 @@ export const useToggleStore = defineStore("toggleStore", {
   }),
   getters: {},
   actions: {
-    setPopupComponent(componentName) {
+    setPopupComponent(component) {
       this.visible = true;
-      this.popupComponent = componentName;
+      console.log("component :>> ", component);
+      this.popupComponent = component;
     },
     toggleState(stateName) {
       this[stateName] = !this[stateName];

@@ -1,12 +1,20 @@
+<script setup></script>
 <template>
   <div class="w-full gap col-between">
     <h3 v-text="episode.episodeTitle || episodeTitle" />
     <p v-text="episode.episodeDescription || episodeDescription" />
-    <audio :src="audioUrl" controls></audio>
+    <audio
+      ref="audio"
+      :src="uploadedFileUrl"
+      controls
+      @loadedmetadata="setAudioDuration"
+    ></audio>
   </div>
 </template>
 
 <script>
+import { mapState } from "pinia";
+
 export default {
   name: "ReviewEpisode",
   props: {
@@ -27,13 +35,14 @@ export default {
     return {
       episodeTitle: null,
       episodeDescription: null,
-      audioUrl: null,
     };
   },
   mounted() {
     this.episodeTitle = localStorage.getItem("episodeTitle");
     this.episodeDescription = localStorage.getItem("episodeDescription");
-    this.audioUrl = localStorage.getItem("audioUrl");
+  },
+  computed: {
+    ...mapState(usePodcastStore, ["uploadedFileUrl"]),
   },
 };
 </script>

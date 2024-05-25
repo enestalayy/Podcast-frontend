@@ -1,0 +1,42 @@
+{
+  "profilePodcasts": [
+    {
+      "id": 686464565465,
+      "title": "TEST Başlık 1",
+      "description": "awydgjyagwdjyagwyjd awyjd gkjyagw dkjygawyj dgakjywgwd",
+      "imageUrl": "https://ymssdswneductuxwvrlr.supabase.co/storage/v1/object/public/Avatars/5ded1cfb-0bc4-4e46-837c-5d62efd3ce8e/avatar",
+      "episodes": [
+        {
+          "id": 686464565415,
+          "title": "Test Bölüm Başlığı",
+          "description": "Test Bölüm Açıklaması Fakat ses yok",
+          "file": ""
+        },
+        {
+          "id": 686464565425,
+          "title": "Test Bölüm Başlığı",
+          "description": "Test Bölüm Açıklaması Fakat ses yok",
+          "file": ""
+        },
+        {
+          "id": 686464565435,
+          "title": "Test Bölüm Başlığı",
+          "description": "Test Bölüm Açıklaması Fakat ses yok",
+          "file": ""
+        }
+      ]
+    },
+    {
+      "id": 686464565466,
+      "title": "TEST Başlık 2",
+      "description": "awydgjyagwdjyagwyjd awyjd gkjyagw dkjygawyj dgakjywgwd",
+      "imageUrl": "https://ymssdswneductuxwvrlr.supabase.co/storage/v1/object/public/Avatars/5ded1cfb-0bc4-4e46-837c-5d62efd3ce8e/avatar"
+    },
+    {
+      "id": 686464565467,
+      "title": "TEST Başlık 3",
+      "description": "awydgjyagwdjyagwyjd awyjd gkjyagw dkjygawyj dgakjywgwd",
+      "imageUrl": "https://ymssdswneductuxwvrlr.supabase.co/storage/v1/object/public/Avatars/5ded1cfb-0bc4-4e46-837c-5d62efd3ce8e/avatar"
+    }
+  ]
+}

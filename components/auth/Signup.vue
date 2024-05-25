@@ -65,18 +65,8 @@
       </PrimePassword>
     </PrimeFloatLabel>
 
-    <PrimeFloatLabel>
-      <PrimeCalendar
-        v-model="birthDate"
-        :minDate="new Date(1900, 0, 1)"
-        :maxDate="new Date(2015, 11, 31)"
-        :manualInput="false"
-        dateFormat="dd/mm/yy"
-        showIcon
-        inputId="birthDate"
-      />
-      <label for="birthDate" v-text="'Doğum Tarihi'" />
-    </PrimeFloatLabel>
+    <BirthDate />
+
     <PrimeDivider type="dotted">
       <b v-text="'Diğer Seçenekler'" />
     </PrimeDivider>
@@ -112,6 +102,7 @@
 
 <script>
 import { mapActions, mapState } from "pinia";
+import BirthDate from "./BirthDate.vue";
 
 export default {
   name: "Signup",
@@ -121,11 +112,13 @@ export default {
       surname: "",
       email: "",
       password: "",
-      birthDate: "",
       showMessage: false,
       data: null,
       error: null,
     };
+  },
+  components: {
+    BirthDate,
   },
   computed: {
     ...mapState(useAuthStore, ["pending"]),
@@ -143,7 +136,6 @@ export default {
           surname: this.surname,
           email: this.email,
           password: this.password,
-          birthDate: this.birthDate,
         });
         if (error) {
           this.error = error;

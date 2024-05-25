@@ -2,9 +2,9 @@
   <PrimeStepper class="createPodcastStepper h-full">
     <PrimeStepperPanel header="Bilgileri gir" class="h-full">
       <template #content="{ nextCallback }">
-        <div class="w-full h-full col-between">
-          <div class="col-stretch gap-25">
-            <PrimeFloatLabel class="w-full md:w-20rem">
+        <div class="w-full min-h-dialog col-between">
+          <div class="w-full col-stretch gap-25">
+            <PrimeFloatLabel v-if="!prop" class="w-full md:w-20rem">
               <PrimeMultiSelect
                 id="categories"
                 v-model="selectedCategories"
@@ -14,7 +14,10 @@
                 selectedItemsLabel="{0} tür seçildi"
                 :selectionLimit="3"
                 @change="
-                  localStorage.setItem('selectedCategories', selectedCategories)
+                  setItem({
+                    key: 'selectedCategories',
+                    value: JSON.stringify(selectedCategories),
+                  })
                 "
                 class="w-full"
               />
@@ -23,32 +26,38 @@
 
             <PrimeFloatLabel>
               <PrimeInputText
-                v-model="PodcastTitle"
-                id="PodcastTitle"
-                @blur="localStorage.setItem('PodcastTitle', PodcastTitle)"
+                v-model="podcastTitle"
+                id="podcastTitle"
+                @blur="
+                  !prop && setItem({ key: 'podcastTitle', value: podcastTitle })
+                "
                 @update:modelValue="() => (error = null)"
                 maxlength="20"
-                placeholder="Maksimum 20 karakter"
+                :placeholder="prop ? prop.title : 'Maksimum 20 karakter'"
                 class="capitalize"
               />
-              <label for="PodcastTitle">Podcast Başlığı*</label>
+              <label for="podcastTitle">Podcast Başlığı*</label>
             </PrimeFloatLabel>
             <PrimeFloatLabel>
               <PrimeTextarea
-                v-model="PodcastDescription"
-                id="PodcastDescription"
+                v-model="podcastDescription"
+                id="podcastDescription"
                 rows="6"
                 autocapitalize="on"
                 @blur="
-                  localStorage.setItem('PodcastDescription', PodcastDescription)
+                  !prop &&
+                    setItem({
+                      key: 'podcastDescription',
+                      value: podcastDescription,
+                    })
                 "
                 @update:modelValue="() => (error = null)"
                 maxlength="200"
-                placeholder="Maksimum 200 karakter"
+                :placeholder="prop ? prop.title : 'Maksimum 200 karakter'"
                 class="w-full pb"
               />
-              <label for="PodcastDescription">Podcast Açıklaması*</label>
-              <p class="maksLength">{{ PodcastDescription.length }} / 200</p>
+              <label for="podcastDescription">Podcast Açıklaması*</label>
+              <p class="maksLength">{{ podcastDescription.length }} / 200</p>
             </PrimeFloatLabel>
           </div>
           <div class="w-full reversed">
@@ -66,7 +75,7 @@
     <PrimeStepperPanel header="Resim yükle" class="h-full col-between">
       <template #content="{ prevCallback, nextCallback }">
         <div class="h-full col-between">
-          <UploadImage />
+          <UploadImage :imageUrl="prop.imageUrl" />
           <div class="row-between">
             <PrimeButton
               @click="prevCallback"
@@ -93,11 +102,13 @@
 
             <PodcastCard
               :content="{
-                title: PodcastTitle ? PodcastTitle : 'Başlık',
-                description: PodcastDescription
-                  ? PodcastDescription
+                title: podcastTitle ? podcastTitle : 'Başlık',
+                description: podcastDescription
+                  ? podcastDescription
                   : 'Açıklama',
-                imageUrl: PodcastImage,
+                imageUrl: podcastImage
+                  ? podcastImage
+                  : '/defaultCardImage.webp',
               }"
             />
           </div>
@@ -109,9 +120,9 @@
               text
             />
             <PrimeButton
-              @click.prevent="handleCreatePodcast"
-              label="Oluştur"
-              icon="pi pi-plus"
+              @click.prevent="prop ? handleUpdatePodcast : handleCreatePodcast"
+              :label="prop ? 'Güncelle' : 'Oluştur'"
+              :icon="prop ? '' : 'pi pi-plus'"
             />
           </div>
         </div>
@@ -127,40 +138,61 @@ import PodcastCard from "../podcast/PodcastCard.vue";
 import { categories } from "~/assets/jsons/categories.json";
 
 export default {
-  name: "CreatePodcast",
+  name: "CreateOrUpdatePodcast",
+  props: {
+    prop: {
+      type: Object,
+      required: false,
+    },
+  },
   components: {
     UploadImage,
     PodcastCard,
   },
   data() {
     return {
-      PodcastTitle: "",
-      PodcastDescription: "",
-      PodcastImage: null,
+      podcastTitle: "",
+      podcastDescription: "",
+      podcastImage: null,
       selectedCategories: null,
       categories: categories,
       error: null,
     };
   },
   created() {
-    if (localStorage.getItem("PodcastTitle")) {
-      this.PodcastTitle = localStorage.getItem("PodcastTitle");
-    }
-    if (localStorage.getItem("PodcastDescription")) {
-      this.PodcastDescription = localStorage.getItem("PodcastDescription");
-    }
-    if (localStorage.getItem("selectedCategories")) {
-      this.selectedCategories = localStorage.getItem("selectedCategories");
-    }
-    if (localStorage.getItem("podcastImage")) {
-      this.podcastImage = localStorage.getItem("podcastImage");
+    if (!this.prop) {
+      if (localStorage.getItem("podcastTitle")) {
+        this.podcastTitle = localStorage.getItem("podcastTitle");
+      }
+      if (localStorage.getItem("podcastDescription")) {
+        this.podcastDescription = localStorage.getItem("podcastDescription");
+      }
+      if (localStorage.getItem("selectedCategories")) {
+        this.selectedCategories = JSON.parse(
+          localStorage.getItem("selectedCategories")
+        );
+      }
+      if (localStorage.getItem("podcastImage")) {
+        this.podcastImage = localStorage.getItem("podcastImage");
+      }
+    } else {
+      this.podcastTitle = this.prop.title;
+      this.podcastDescription = this.prop.description;
+      this.podcastImage = this.prop.imageUrl;
     }
   },
+  // computed: {
+  //   podcastImage() {
+  //     if (localStorage.getItem("podcastImage")) {
+  //       return localStorage.getItem("podcastImage");
+  //     } else return null;
+  //   },
+  // },
   methods: {
     ...mapActions(useToggleStore, ["setPopopComponent"]),
     ...mapActions(usePodcastStore, ["createPodcast"]),
     handleCreatePodcast() {
-      const byteCharacters = atob(this.PodcastImage.split(",")[1]);
+      const byteCharacters = atob(this.podcastImage.split(",")[1]);
       const byteNumbers = new Array(byteCharacters.length);
       for (let i = 0; i < byteCharacters.length; i++) {
         byteNumbers[i] = byteCharacters.charCodeAt(i);
@@ -168,18 +200,35 @@ export default {
       const byteArray = new Uint8Array(byteNumbers);
       const blob = new Blob([byteArray]);
       const file = new File([blob], "image.webp");
-
-      if (this.PodcastTitle.length < 2 || this.PodcastDescription.length < 20) {
+      if (this.podcastTitle.length < 2 || this.podcastDescription.length < 20) {
         this.error = "Lütfen zorunlu alanları doldurunuz";
         console.log("this.error :>> ", this.error);
       } else {
-        this.createPodcast({
-          podcastName: this.PodcastTitle,
-          podcastCategory: selectedCategories,
-          podcastDescription: this.PodcastDescription,
-          file: file,
+        const formData = new FormData();
+        formData.append("podcastName", this.podcastTitle);
+        formData.append("podcastCategory", this.selectedCategories[0].name);
+        formData.append("podcastDescription", this.podcastDescription);
+        formData.append("file", file);
+
+        const { data, error } = this.createPodcast({
+          formData,
         });
+        if (!error) {
+          this.$toast.add({
+            severity: "success",
+            summary: "Podcast başarıyla oluşturuldu",
+            detail: `${data.value.title} başlıklı podcastiniz eklendi.`,
+            life: 4000,
+          });
+        } else console.error(error);
       }
+    },
+    handleUpdatePodcast() {
+      alert("güncellendi");
+    },
+    setItem(obj) {
+      const { key, value } = obj;
+      localStorage.setItem(key, value);
     },
   },
 };

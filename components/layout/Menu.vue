@@ -16,7 +16,7 @@
       </li>
 
       <li v-if="session">
-        <NuxtLink to="/user">
+        <NuxtLink to="/profile">
           <PrimeButton icon="pi pi-user" text label="Hesabım" class="w-full" />
         </NuxtLink>
       </li>
@@ -51,6 +51,7 @@
 
     <PrimeButton
       v-else
+      @click="signOut"
       icon="pi pi-sign-out"
       class="w-full"
       text
@@ -70,6 +71,7 @@ export default {
   },
   methods: {
     ...mapActions(useToggleStore, ["setPopupComponent"]),
+    ...mapActions(useAuthStore, ["signOut"]),
   },
 };
 </script>
