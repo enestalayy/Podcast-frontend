@@ -87,7 +87,10 @@ export const useAuthStore = defineStore("authStore", {
     async signOut() {
       const supabase = useSupabaseClient();
       const { error } = await supabase.auth.signOut();
-      this.session = null;
+      if (!error) {
+        this.session = null;
+        this.$router.push("/");
+      }
       return { error };
     },
 

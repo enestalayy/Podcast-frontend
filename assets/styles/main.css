@@ -114,6 +114,9 @@
 .gap {
   gap: 15px;
 }
+.gap-5 {
+  gap: 5px;
+}
 
 .p {
   padding: 15px;
@@ -197,13 +200,15 @@ ul {
 
 .p-dialog {
   width: 500px;
-  height: 500px;
+  height: 600px;
   max-height: 100%;
   max-width: 100%;
+  overflow-y: hidden;
 }
 
 .p-dialog-content {
-  height: 420px;
+  height: 100%;
+  overflow-y: hidden;
 }
 
 .p-stepper-nav {
@@ -227,12 +232,22 @@ ul {
 .p-stepper-horizontal {
   height: 100%;
   .p-stepper-panels {
+    height: 100%;
+    .p-stepper-content {
+      height: 90%;
+    }
+  }
+}
+
+/* .p-stepper-horizontal {
+  height: 100%;
+  .p-stepper-panels {
     min-height: 320px;
     .p-stepper-content {
       min-height: 320px;
     }
   }
-}
+} */
 
 .cardSurface {
   background-color: var(--surface-card);

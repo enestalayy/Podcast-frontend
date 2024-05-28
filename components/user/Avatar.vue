@@ -7,9 +7,12 @@
       class="updateAvatar"
       mode="basic"
       accept="image/*"
+      url="/api/upload"
       :maxFileSize="1000000"
       uploadIcon="pi pi-pencil"
+      chooseIcon="pi pi-check"
       @input="editAvatar"
+      @upload="postAvatar"
     />
   </div>
 </template>
@@ -29,15 +32,20 @@ export default {
     return {
       user: useSupabaseUser(),
       avatarKey: 0,
+      compressedImage: null,
     };
   },
   computed: {
     getUsersAvatar() {
-      const supabase = useSupabaseClient();
-      const { data } = supabase.storage
-        .from("Avatars")
-        .getPublicUrl(`${this.user.id}/avatar`);
-      return data.publicUrl;
+      if (this.compressedImage && this.editProfile) {
+        return URL.createObjectURL(this.compressedImage);
+      } else {
+        const supabase = useSupabaseClient();
+        const { data } = supabase.storage
+          .from("Avatars")
+          .getPublicUrl(`${this.user.id}/avatar`);
+        return data.publicUrl;
+      }
     },
   },
   methods: {
@@ -53,10 +61,21 @@ export default {
         height: 200,
         orientation: 2,
       });
+      this.compressedImage = compressedImage;
+    },
+    async postAvatar() {
       if (this.getUsersAvatar) {
-        const { data, error } = await this.updateAvatar(compressedImage);
+        const { data, error } = await this.updateAvatar(this.compressedImage);
+        this.$toast.add({
+          severity: "success",
+          summary: "Profil resmi güncellendi",
+          detail: "Profil resmi başarıyla güncellendi",
+          life: 4000,
+        });
       } else {
-        const { data, error } = await this.uploadAvatar(compressedImage);
+        const { data, error } = await this.uploadAvatar(this.compressedImage);
+        console.log("data :>> ", data);
+        console.log("error :>> ", error);
       }
     },
   },

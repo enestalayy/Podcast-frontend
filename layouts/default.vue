@@ -45,8 +45,9 @@ import { mapState } from "pinia";
 import Header from "~/components/layout/Header.vue";
 import Menu from "~/components/layout/Menu.vue";
 import Footer from "~/components/layout/Footer.vue";
-import CreateOrUpdatePodcast from "~/components/user/CreateOrUpdatePodcast.vue";
-import CreateOrUpdateEpisode from "~/components/user/CreateOrUpdateEpisode.vue";
+import CreateOrUpdatePodcast from "~/components/podcast/CreateOrUpdatePodcast.vue";
+import CreateOrUpdateEpisode from "~/components/episode/CreateOrUpdateEpisode.vue";
+import ShareComponent from "~/components/common/ShareComponent.vue";
 export default {
   data() {
     return {
@@ -62,6 +63,7 @@ export default {
     Footer,
     CreateOrUpdatePodcast,
     CreateOrUpdateEpisode,
+    ShareComponent,
   },
   computed: {
     ...mapState(useToggleStore, ["popupComponent"]),

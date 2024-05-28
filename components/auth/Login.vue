@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="handleLogin" action="">
-    <Message v-if="error" :message="error" />
+    <ErrorMessage v-if="error" :message="error" />
     <PrimeFloatLabel>
       <PrimeInputText
         id="email"
@@ -80,6 +80,7 @@ export default {
         password: this.password,
       });
       if (error) {
+        console.log("typeof error :>> ", typeof error);
         this.error = error;
       } else {
         console.log("Giriş Başarılı!");
@@ -112,7 +113,7 @@ div {
         @submit.prevent="handleLogin"
         class="flex flex-col gap-4 w-full overflow-auto"
       >
-        <Message
+        <ErrorMessage
           v-if="error"
           :statusCode="error"
           :message="$t('errors.auth.404')"

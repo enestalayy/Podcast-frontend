@@ -25,7 +25,7 @@ const { width, height } = useWindowSize();
   </div>
 </template>
 <script>
-import Playlist from "../podcast/Playlist.vue";
+import Playlist from "../audio/Playlist.vue";
 
 export default {
   data() {

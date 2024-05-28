@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="handleSignup">
-    <Message
+    <ErrorMessage
       v-if="showMessage"
       :message="error ? error : 'Lütfen gelen e-postanızı onaylayınız'"
       :severity="error && 'warn'"

@@ -7,19 +7,16 @@ export const useUserStore = defineStore("userStore", {
   }),
   getters: {},
   actions: {
-    async getProfilePodcasts() {
-      const authStore = useAuthStore();
-      const { data, error } = await useFetch(
-        `/api/user/profile/${authStore.session.user.id}`
-      );
+    async getProfilePodcasts(userId) {
+      const { data, error } = await useFetch(`/api/user/podcast/${userId}`);
       if (!error.value) {
-        this.profilePodcasts = data.value;
+        this.profilePodcasts = data.value.createdPodcastList;
       } else {
         console.error(error.value);
       }
     },
     async getUsersPodcasts(userId) {
-      const { data, error } = await useFetch(`/api/user/profile/${userId}`);
+      const { data, error } = await useFetch(`/api/user/podcast/${userId}`);
       if (!error.value) {
         this.usersPodcasts = data.value;
       } else {
