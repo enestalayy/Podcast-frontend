@@ -15,7 +15,9 @@
       }"
     />
     <div class="col w-full center gap relative">
-      <Message :message="'Sayfa yenilendiğinde tüm veriler kaybolacaktır'" />
+      <ErrorMessage
+        :message="'Sayfa yenilendiğinde tüm veriler kaybolacaktır'"
+      />
       <div class="row gap">
         <PrimeButton
           @click="handleRecordAudio"

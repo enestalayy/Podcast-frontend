@@ -1,6 +1,8 @@
 {
   "AuthApiError: Email rate limit exceeded": "İstek sınırı aşıldı lütfen daha sonra tekrar deneyiniz.",
   "AuthApiError: Invalid login credentials": "Kullanıcı adı veya şifre yanlış",
+  "AuthApiError: Unable to validate email address: invalid format": "Lütfen geçerli bir email adresi giriniz.",
+  "AuthWeakPasswordError: Password should be at least 6 characters.": "Şifreniz minimum 6 karakterden oluşmalı.",
   "tryAgain": "Tekrar Dene",
   "pleaseTryAgain": "Lütfen tekrar deneyin",
   "errorOccured": "Bir Hata Oluştu",

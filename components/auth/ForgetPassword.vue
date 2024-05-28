@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="handleResetPassword">
-    <Message
+    <ErrorMessage
       v-if="showMessage"
       :message="
         error

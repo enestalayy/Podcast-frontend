@@ -9,8 +9,8 @@
 <script>
 import { mapActions } from "pinia";
 import { useToggleStore } from "@/stores/ToggleStore";
-import Carousel from "~/components/podcast/Carousel.vue";
-import MainSlider from "~/components/podcast/MainSlider.vue";
+import Carousel from "~/components/podcast/carousel/Carousel.vue";
+import MainSlider from "~/components/podcast/carousel/MainSlider.vue";
 import Test from "~/components/podcast/test.vue";
 
 export default {

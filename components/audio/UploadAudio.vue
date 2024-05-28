@@ -5,14 +5,13 @@
     :maxFileSize="100000000"
     label="Ses Dosyası Yükle"
     mode="advanced"
-    @change="deneme"
   >
     <template #header="{ chooseCallback, clearCallback, files }">
       <div class="w-full center gap relative">
         <PrimeButton
           @click="showRecorder ? toggleShowRecorder() : chooseCallback()"
           :icon="showRecorder ? 'pi pi-angle-left' : 'pi pi-file-import'"
-          label="Ses yükle"
+          :label="prop ? 'Sesi güncelle' : 'Ses yükle'"
           :disabled="files[0]"
           outlined
         />
@@ -58,6 +57,12 @@ export default {
   name: "UploadAudio",
   components: {
     AudioRecorder,
+  },
+  props: {
+    prop: {
+      type: Object,
+      required: false,
+    },
   },
   data() {
     return {

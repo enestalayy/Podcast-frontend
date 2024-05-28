@@ -1,3 +1,7 @@
+<script setup>
+const user = useSupabaseUser();
+const hasPassword = user.value.app_metadata.provider === "email";
+</script>
 <template>
   <div class="w-full">
     <div class="p m profileContainer br">
@@ -13,14 +17,20 @@
           </div>
         </div>
         <div class="col p gap" style="align-items: end">
-          <div v-if="editProfile" class="row gap">
-            <PrimeInputText
-              v-model="newEmail"
-              :placeholder="session.user.user_metadata.email"
+          <div class="row gap">
+            <div v-if="updatingEmail" class="row gap">
+              <PrimeInputText
+                v-model="newEmail"
+                :placeholder="session.user.user_metadata.email"
+              />
+            </div>
+            <h3 v-else class="m-0" v-text="session.user.user_metadata.email" />
+            <PrimeButton
+              v-if="editProfile"
+              @click="handleUpdateEmail"
+              :icon="updatingEmail ? 'pi pi-check' : 'pi pi-pencil'"
             />
-            <PrimeButton @click="handleUpdateEmail" icon="pi pi-pencil" />
           </div>
-          <h3 v-else class="m-0" v-text="session.user.user_metadata.email" />
           <p
             v-if="session.user.user_metadata.birthDate"
             v-text="formattedBirthDate"
@@ -31,6 +41,27 @@
               @click="updateBirthDate"
               :disabled="!birthDate"
               icon="pi pi-pencil"
+            />
+          </div>
+          <div class="row gap" v-show="editProfile && hasPassword">
+            <PrimePassword
+              v-show="editPassword"
+              v-model="newPassword"
+              toggleMask
+            />
+            <PrimeButton
+              v-show="editPassword"
+              @click="updatePassword"
+              icon="pi pi-check"
+            />
+            <PrimeButton
+              @click="editPassword = !editPassword"
+              :label="editPassword ? '' : 'Şifre Değiştir'"
+              :icon="editPassword ? 'pi pi-times' : 'pi pi-key'"
+              iconPos="right"
+              outlined
+              :severity="editPassword ? 'danger' : 'primary'"
+              :rounded="editPassword"
             />
           </div>
         </div>
@@ -76,13 +107,16 @@ import messages from "~/assets/jsons/messages.json";
 import UploadAudio from "~/components/audio/UploadAudio.vue";
 import BirthDate from "~/components/auth/BirthDate.vue";
 import Avatar from "~/components/user/Avatar.vue";
-import UsersPodcasts from "~/components/user/UsersPodcasts.vue";
+import UsersPodcasts from "~/components/podcast/user/UsersPodcasts.vue";
 
 export default {
   data() {
     return {
       editProfile: false,
       newEmail: null,
+      newPassword: null,
+      updatingEmail: false,
+      editPassword: false,
     };
   },
   components: {
@@ -110,24 +144,49 @@ export default {
   },
   methods: {
     ...mapActions(useToggleStore, ["setPopupComponent"]),
-    ...mapActions(useUserStore, ["getProfilePodcasts", "getUsersPodcasts"]),
+    ...mapActions(usePodcastStore, ["getUsersPodcasts"]),
     ...mapActions(useAuthStore, ["updateBirthDate", "updateEmail"]),
     toggleEditProfile() {
       this.editProfile = !this.editProfile;
     },
     async handleUpdateEmail() {
-      const { data, error } = await this.updateEmail(this.newEmail);
+      if (this.updatingEmail) {
+        const { data, error } = await this.updateEmail(this.newEmail);
 
+        if (data.user) {
+          this.$toast.add({
+            severity: "info",
+            summary: "Email değiştirme onayı",
+            detail: `${data.user.new_email} adresine onay maili başarıyle gönderildi.`,
+          });
+        } else {
+          this.$toast.add({
+            severity: "warn",
+            summary: "Email değiştirme başarısız",
+            detail: messages[error],
+          });
+        }
+      } else {
+        this.updatingEmail = true;
+      }
+    },
+    async updatePassword() {
+      const supabase = useSupabaseClient();
+      const { data, error } = await supabase.auth.updateUser({
+        password: this.newPassword,
+      });
+      console.log("data :>> ", data);
+      console.log("error :>> ", error);
       if (data.user) {
         this.$toast.add({
           severity: "info",
-          summary: "Email değiştirme onayı",
-          detail: `${data.user.new_email} adresine onay maili başarıyle gönderildi.`,
+          summary: "Şifre başarıyla değiştirildi",
+          detail: `asdasd`,
         });
       } else {
         this.$toast.add({
           severity: "warn",
-          summary: "Email değiştirme başarısız",
+          summary: "Şifre değiştirme başarısız",
           detail: messages[error],
         });
       }
@@ -137,7 +196,8 @@ export default {
     if (this.userId) {
       this.getUsersPodcasts();
     } else {
-      this.getProfilePodcasts();
+      const user = useSupabaseUser();
+      this.getUsersPodcasts(user.value.id);
     }
   },
 };
