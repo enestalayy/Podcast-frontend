@@ -9,11 +9,11 @@ const { width, height } = useWindowSize();
       v-model:visible="visible"
       :modal="false"
       :position="width > 1024 ? 'right' : 'bottom'"
-      header="Çalma Listesi"
+      header="Çalma Sırası"
       :dismissable="false"
       class="queueSidebar"
     >
-      <Playlist />
+      <Queue />
     </PrimeSidebar>
     <PrimeButton
       @click="visible = true"
@@ -25,7 +25,7 @@ const { width, height } = useWindowSize();
   </div>
 </template>
 <script>
-import Playlist from "../audio/Playlist.vue";
+import Queue from "../audio/Queue.vue";
 
 export default {
   data() {
@@ -34,7 +34,7 @@ export default {
     };
   },
   components: {
-    Playlist,
+    Queue,
   },
 };
 </script>

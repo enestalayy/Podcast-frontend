@@ -67,7 +67,7 @@ export default {
   },
   computed: {
     ...mapState(useToggleStore, ["popupComponent"]),
-    ...mapState(usePodcastStore, ["currentEpisode"]),
+    ...mapState(usePodcastStore, ["playingEpisode"]),
   },
 };
 </script>

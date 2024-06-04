@@ -2,8 +2,22 @@
   <div class="col-center gap w-full">
     <div
       v-show="index <= indexToShowSlide"
+      v-if="trtPodcasts"
+      v-for="(set, index) in trtPodcasts.sets"
+      :key="set.id"
+      class="col w-full py pl"
+    >
+      <div v-if="index > 1">
+        <NuxtLink :to="`genre${set.path}`">
+          <PrimeButton size="large" link :label="set.title" />
+        </NuxtLink>
+        <Slider :set="set" />
+      </div>
+    </div>
+    <!-- <div
+      v-show="index <= indexToShowSlide"
       v-if="podcasts"
-      v-for="(set, index) in podcasts.sets"
+      v-for="(set, index) in staticPodcasts"
       :key="set.id"
       class="col w-full py pl"
     >
@@ -11,7 +25,7 @@
         <PrimeButton size="large" link :label="set.title" />
       </NuxtLink>
       <Slider :set="set" />
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -26,11 +40,11 @@ export default {
   },
   data() {
     return {
-      indexToShowSlide: 2,
+      indexToShowSlide: 4,
     };
   },
   computed: {
-    ...mapState(usePodcastStore, ["podcasts"]),
+    ...mapState(usePodcastStore, ["podcasts", "staticPodcasts", "trtPodcasts"]),
   },
 
   mounted() {
@@ -51,7 +65,7 @@ export default {
 
         if (
           bottomOfWindow &&
-          this.indexToShowSlide <= this.podcasts.sets.length
+          this.indexToShowSlide <= this.trtPodcasts.sets.length
         ) {
           this.indexToShowSlide += 2;
         }

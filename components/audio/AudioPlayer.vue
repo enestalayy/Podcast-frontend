@@ -1,14 +1,16 @@
 <template>
-  <div class="row-between p res-p gap res-gap">
+  <audio ref="audio" autoplay :src="playingEpisode.audio.downloadUrl"></audio>
+
+  <div v-if="audio" class="row-between p res-p gap res-gap">
     <div class="playerPodcastInfo row gap res-gap">
       <img
-        :src="playlist.imageUrl"
+        :src="queue.imageUrl"
         alt="image"
         width="70"
         height="70"
         class="br playerImage"
       />
-      <p class="playerText word-break" v-text="currentEpisode.title" />
+      <p class="playerText word-break" v-text="playingEpisode.title" />
     </div>
     <div class="row gap res-gap">
       <div class="row center">
@@ -79,7 +81,7 @@
 </template>
 
 <script>
-import { mapState } from "pinia";
+import { mapActions, mapState } from "pinia";
 import QueueSidebar from "../layout/QueueSidebar.vue";
 export default {
   name: "AudioPlayer",
@@ -88,7 +90,7 @@ export default {
   },
   data() {
     return {
-      audio: null,
+      audio: this.$refs.audio,
       audioDuration: null,
       currentTime: null,
       isPlaying: false,
@@ -98,18 +100,33 @@ export default {
   },
 
   computed: {
-    ...mapState(usePodcastStore, ["playlist", "currentEpisode"]),
+    ...mapState(useQueueStore, ["queue", "playingEpisode"]),
   },
-  created() {
-    this.audio = new Audio(this.currentEpisode.audio.downloadUrl);
-  },
+
   mounted() {
+    this.audio = this.$refs.audio;
+
     this.currentTime = this.audio.currentTime;
     this.volume = this.audio.volume * 100;
     this.isMuted = this.audio.muted;
     this.togglePlay();
+
+    // GET QUEUE FROM SESSİON STORAGE
+    this.getQueue();
+
+    // EPİSODE BİTTİĞİNDE SIRADAKİNE GEÇME
+    this.audio.addEventListener("ended", this.onAudioEnded);
   },
+
+  beforeUnmount() {
+    // Remove event listener when component is destroyed
+    if (this.audio) {
+      this.audio.removeEventListener("ended", this.onAudioEnded);
+    }
+  },
+
   methods: {
+    ...mapActions(useQueueStore, ["getQueue", "moveToNextEpisode"]),
     convertTime(sec) {
       const minutes = Math.floor(sec / 60);
       const seconds = Math.floor(sec % 60);
@@ -147,6 +164,10 @@ export default {
       this.audio.currentTime -= 10;
       this.currentTime -= 10;
     },
+
+    onAudioEnded() {
+      this.moveToNextEpisode();
+    },
   },
   watch: {
     isPlaying(newValue) {
@@ -155,6 +176,11 @@ export default {
       } else {
         this.audio.removeEventListener("timeupdate", this.playbackListener);
       }
+    },
+    playingEpisode(newAudio) {
+      this.audioDuration = newAudio.duration;
+      this.currentTime = newAudio.currentTime;
+      this.isPlaying = true;
     },
   },
 };

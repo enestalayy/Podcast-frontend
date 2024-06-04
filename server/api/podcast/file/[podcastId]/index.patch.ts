@@ -1,11 +1,11 @@
 export default defineEventHandler(async (event) => {
   const { apiUrl } = useRuntimeConfig();
-  const { podcastId } = getRouterParams(event);
+  const podcastId = event.context.params?.podcastId;
   const formData = await readFormData(event);
   const accessToken = getCookie(event, "sb-access-token");
-  console.log("formData :>> ", formData);
-  return await $fetch(`${apiUrl}/episode/${podcastId}`, {
-    method: "POST",
+
+  return await $fetch(`${apiUrl}/podcast/file/${podcastId}`, {
+    method: "PATCH",
     body: formData,
     headers: {
       Authorization: `Bearer ${accessToken}`,

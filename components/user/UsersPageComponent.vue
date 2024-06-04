@@ -1,7 +1,3 @@
-<script setup>
-const user = useSupabaseUser();
-const hasPassword = user.value.app_metadata.provider === "email";
-</script>
 <template>
   <div class="w-full">
     <div class="p m profileContainer br">
@@ -117,6 +113,7 @@ export default {
       newPassword: null,
       updatingEmail: false,
       editPassword: false,
+      hasPassword: false,
     };
   },
   components: {
@@ -159,6 +156,7 @@ export default {
             summary: "Email değiştirme onayı",
             detail: `${data.user.new_email} adresine onay maili başarıyle gönderildi.`,
           });
+          this.toggleEditProfile();
         } else {
           this.$toast.add({
             severity: "warn",
@@ -183,6 +181,7 @@ export default {
           summary: "Şifre başarıyla değiştirildi",
           detail: `asdasd`,
         });
+        this.toggleEditProfile();
       } else {
         this.$toast.add({
           severity: "warn",
@@ -198,6 +197,7 @@ export default {
     } else {
       const user = useSupabaseUser();
       this.getUsersPodcasts(user.value.id);
+      this.hasPassword = user.value.app_metadata.provider === "email";
     }
   },
 };

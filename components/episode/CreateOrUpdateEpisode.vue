@@ -2,15 +2,20 @@
   <PrimeStepper>
     <PrimeStepperPanel header="Bilgİleri gir">
       <template #content="{ nextCallback }">
-        <div class="col-stretch gap-25 h-full">
+        <div class="col-between align-stretch h-full">
           <PrimeFloatLabel class="w-full md:w-14rem">
-            {{ console.log("asd", usersPodcasts.profile) }}
             <PrimeDropdown
               v-model="selectedPodcast"
               inputId="selectPodcast"
               :options="usersPodcasts.profile.createdPodcastList"
               optionLabel="title"
               emptyMessage="Henüz bir Podcast paylaşılmamış"
+              @change="
+                setItem({
+                  key: 'selectedPodcast',
+                  value: selectedPodcast._id,
+                })
+              "
               class="w-full"
             />
             <label for="selectPodcast">Podcast Seç</label>
@@ -54,26 +59,27 @@
             </p>
           </PrimeFloatLabel>
           <div class="w-full reversed">
-            <PrimeButton @click="nextCallback" label="İleri" text />
+            <PrimeButton @click="nextCallback" label="İleri" />
           </div>
         </div>
       </template>
     </PrimeStepperPanel>
     <PrimeStepperPanel :header="prop ? 'Sesi güncelle' : 'Ses yükle'">
       <template #content="{ prevCallback, nextCallback }">
-        <div class="col-between gap w-full min-h-dialog">
+        <div class="col-between gap w-full h-full">
           <UploadAudio :prop="prop" />
 
           <div class="row-between">
             <PrimeButton @click="prevCallback" label="Geri" text />
-            <PrimeButton @click="nextCallback" label="İleri" text />
+            <PrimeButton @click="nextCallback" label="İleri" />
           </div>
         </div>
       </template>
     </PrimeStepperPanel>
     <PrimeStepperPanel header="Önizle">
       <template #content="{ prevCallback }">
-        <div class="col-between min-h-dialog">
+        <div class="col-between h-full">
+          <ErrorMessage v-if="error" :message="error" />
           <ReviewEpisode
             :episode="{
               episodeTitle,
@@ -86,14 +92,12 @@
             <PrimeButton
               @click="handleUpdateOrCreate"
               :label="prop ? 'Güncelle' : 'Paylaş'"
-              text
             />
           </div>
         </div>
       </template>
     </PrimeStepperPanel>
   </PrimeStepper>
-  {{ console.log("selectedPodcast  >> ", selectedPodcast) }}
 </template>
 
 <script>
@@ -120,20 +124,23 @@ export default {
       podcasts: null,
       selectedPodcast: null,
       error: null,
+      pending: false,
     };
   },
   computed: {
     ...mapState(usePodcastStore, ["usersPodcasts"]),
   },
   methods: {
+    ...mapActions(useToggleStore, ["toggleState"]),
+
     ...mapActions(usePodcastStore, ["createEpisode", "updateEpisode"]),
     handleUpdateOrCreate() {
       this.prop ? this.handleUpdateEpisode() : this.handleCreateEpisode();
     },
     async handleCreateEpisode() {
       if (
-        this.episodeTitle.length < 2 ||
-        this.episodeDescription.length < 20 ||
+        !this.episodeTitle ||
+        !this.episodeDescription ||
         !this.selectedPodcast
       ) {
         this.error = "Lütfen zorunlu alanları doldurunuz";
@@ -141,57 +148,86 @@ export default {
         const formData = new FormData();
         formData.append("episodeTitle", this.episodeTitle);
         formData.append("episodeDescription", this.episodeDescription);
-        const { data, error } = await this.createEpisode({
+        const { data, error, pending } = await this.createEpisode({
           formData,
           podcastId: this.selectedPodcast._id,
         });
+        this.pending = pending;
         if (!error.value) {
+          this.toggleState("visible");
+
           this.$toast.add({
             severity: "success",
             summary: "Bölüm başarıyla oluşturuldu",
             detail: `${data.value.title} başlıklı bölümünüz eklendi.`,
             life: 4000,
           });
+        } else {
+          this.error = error.value.statusCode;
         }
-        console.log("data :>> ", data);
-        console.log("error :>> ", error);
       }
     },
     async handleUpdateEpisode() {
-      if (this.episodeTitle.length < 2 || this.episodeDescription.length < 20) {
+      if (!this.episodeTitle && !this.episodeDescription && !this.file) {
         this.error = "Lütfen zorunlu alanları doldurunuz";
-        console.log("this.error :>> ", this.error);
       } else {
-        const formData = new FormData();
-        this.prop.title !== this.episodeTitle &&
-          formData.append("episodeTitle", this.episodeTitle);
-        this.prop.description !== this.episodeDescription &&
-          formData.append("episodeDescription", this.episodeDescription);
-        // this.prop._id !== this.selectedPodcast._id &&
-        //   formData.append("selectedPodcast", this.selectedPodcast);
+        const episodeInfo = {};
+        if (this.prop.title !== this.episodeTitle) {
+          episodeInfo.episodeTitle = this.episodeTitle;
+        }
+        if (this.prop.description !== this.episodeDescription) {
+          episodeInfo.episodeDescription = this.episodeDescription;
+        }
 
-        await this.updateEpisode({
-          formData,
+        // this.prop._id !== this.selectedPodcast._id &&
+        //   episodeInfo.append("selectedPodcast", this.selectedPodcast);
+
+        const { data, error, pending } = await this.updateEpisode({
+          episodeInfo,
           podcastId: this.selectedPodcast._id,
           episodeId: this.prop._id,
         });
+
+        this.pending = pending;
+
+        if (!error.value) {
+          this.toggleState("visible");
+
+          this.$toast.add({
+            severity: "success",
+            summary: "Bölüm başarıyla güncellendi",
+            detail: `${data.value.name} başlıklı bölümünüz güncellendi.`,
+            life: 4000,
+          });
+        } else {
+          alert("HATA", error.value);
+        }
       }
     },
     setItem(obj) {
       const { key, value } = obj;
-      localStorage.setItem(key, value);
+      if (!this.prop && value && value.length > 0) {
+        localStorage.setItem(key, value);
+      }
     },
   },
   mounted() {
     if (this.prop) {
       this.episodeTitle = this.prop.title;
       this.episodeDescription = this.prop.description;
-      this.selectedPodcast = this.profilePodcasts.find((e) => {
-        return e._id === this.prop.podcastId;
-      });
+      this.selectedPodcast = this.usersPodcasts.profile.createdPodcastList.find(
+        (e) => {
+          return e._id === this.prop.podcastId;
+        }
+      );
     } else {
       this.episodeTitle = localStorage.getItem("episodeTitle");
       this.episodeDescription = localStorage.getItem("episodeDescription");
+      this.selectedPodcast = this.usersPodcasts.profile.createdPodcastList.find(
+        (e) => {
+          return e._id === localStorage.getItem("selectedPodcast");
+        }
+      );
     }
   },
 };

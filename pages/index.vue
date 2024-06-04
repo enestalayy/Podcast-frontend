@@ -1,5 +1,5 @@
 <template>
-  <div class="col-center gap">
+  <div class="col-center gap w-full">
     <MainSlider />
     <!-- <Test /> -->
     <Carousel />
@@ -28,5 +28,6 @@ export default {
 <style scoped>
 div {
   width: 100%;
+  max-width: 100%;
 }
 </style>

@@ -9,6 +9,7 @@ const { userId } = route.params;
 </template>
 
 <script>
+import { mapActions } from "pinia";
 import UsersPageComponent from "~/components/user/UsersPageComponent.vue";
 
 export default {
