@@ -1,6 +1,4 @@
 export default defineEventHandler(async () => {
   const { apiUrl } = useRuntimeConfig();
-  return await $fetch(`${apiUrl}/podcast`, {
-    method: "GET",
-  });
+  return await $fetch(`${apiUrl}/podcast`);
 });

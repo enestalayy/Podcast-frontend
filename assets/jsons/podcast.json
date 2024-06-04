@@ -1,0 +1,1556 @@
+{
+  "id": 12431069,
+  "title": "Az Gider Uz Beklerken",
+  "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+  "metaTitle": null,
+  "metaDescription": null,
+  "type": "show",
+  "path": "/show/az-gider-uz-beklerken",
+  "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+  "imageTitle": "Az Gider Uz Beklerken",
+  "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+  "isLiked": null,
+  "isFavorite": false,
+  "shareUrl": "/show/az-gider-uz-beklerken",
+  "score": 0,
+  "popularity": 0,
+  "coverImage": null,
+  "showType": "Podcast",
+  "channel": {
+    "id": 131713,
+    "title": "Radyo 1: Radyo Programları"
+  },
+  "genre": [
+    {
+      "path": "/genre/podcast",
+      "title": "Podcast",
+      "id": 131700
+    },
+    {
+      "path": "/genre/sanat",
+      "title": "Sanat",
+      "id": 4465540
+    },
+    {
+      "path": "/genre/felsefe-podcast",
+      "title": "Felsefe Podcast",
+      "id": 4465544
+    }
+  ],
+  "related_shows": [],
+  "sort": "ascending",
+  "items": [
+    {
+      "id": 12603883,
+      "title": "1. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/1-bolum-az-gider-uz-beklerken-12603883",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_f82f0512421337f0db85a50060cce8cd.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": true,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603883",
+      "showId": 12431069,
+      "episodeNo": 1,
+      "publishedDate": "2023-04-04T08:19:49.990Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "28:01",
+      "audio": {
+        "duration": 1681.142063,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/536c2f10-0b51-4adf-b83e-d318054a716a/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/536c2f10-0b51-4adf-b83e-d318054a716a/master.m4a"
+      }
+    },
+    {
+      "id": 12603884,
+      "title": "2. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/2-bolum-az-gider-uz-beklerken-12603884",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_e40ed8db0b03db8a95047e7a8396c225.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603884",
+      "showId": 12431069,
+      "episodeNo": 2,
+      "publishedDate": "2023-04-04T08:20:11.328Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "31:17",
+      "audio": {
+        "duration": 1877.132219,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/afc8f535-bece-42df-82ba-af73ca0c309a/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/afc8f535-bece-42df-82ba-af73ca0c309a/master.m4a"
+      }
+    },
+    {
+      "id": 12603885,
+      "title": "3. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/3-bolum-az-gider-uz-beklerken-12603885",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_08916f6b827b37fad5ec02f70716b864.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603885",
+      "showId": 12431069,
+      "episodeNo": 3,
+      "publishedDate": "2023-04-04T08:21:34.463Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "27:36",
+      "audio": {
+        "duration": 1656.222531,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/06d88e9a-251a-4c87-84ca-97b7f2e32fa4/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/06d88e9a-251a-4c87-84ca-97b7f2e32fa4/master.m4a"
+      }
+    },
+    {
+      "id": 12603886,
+      "title": "4. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/4-bolum-az-gider-uz-beklerken-12603886",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_1ab2586638854c72b365989b6d328e29.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603886",
+      "showId": 12431069,
+      "episodeNo": 4,
+      "publishedDate": "2023-04-04T08:21:57.627Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "26:25",
+      "audio": {
+        "duration": 1585.691125,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/1c8ee007-fb63-4884-8a84-17f6244f3fb2/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/1c8ee007-fb63-4884-8a84-17f6244f3fb2/master.m4a"
+      }
+    },
+    {
+      "id": 12603887,
+      "title": "5. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/5-bolum-az-gider-uz-beklerken-12603887",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_555f64f3acd00b0480c23544e6f3ddcb.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603887",
+      "showId": 12431069,
+      "episodeNo": 5,
+      "publishedDate": "2023-04-04T08:21:35.700Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "25:35",
+      "audio": {
+        "duration": 1535.956438,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/791c4283-602f-46f7-826e-95872e722100/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/791c4283-602f-46f7-826e-95872e722100/master.m4a"
+      }
+    },
+    {
+      "id": 12603888,
+      "title": "6. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/6-bolum-az-gider-uz-beklerken-12603888",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_c383bc27cc4db97ba80bb47c01560805.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603888",
+      "showId": 12431069,
+      "episodeNo": 6,
+      "publishedDate": "2023-04-04T08:22:05.182Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "29:20",
+      "audio": {
+        "duration": 1760.754094,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/a91fe806-c5a7-4812-98f6-bd186a1038a8/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/a91fe806-c5a7-4812-98f6-bd186a1038a8/master.m4a"
+      }
+    },
+    {
+      "id": 12603889,
+      "title": "7. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/7-bolum-az-gider-uz-beklerken-12603889",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_f2da82fa2096e5b0ba29057c99da8156.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603889",
+      "showId": 12431069,
+      "episodeNo": 7,
+      "publishedDate": "2023-04-04T08:22:08.909Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "29:02",
+      "audio": {
+        "duration": 1742.201438,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/0e1a664f-a3ee-40f5-8d76-06ee3efff13d/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/0e1a664f-a3ee-40f5-8d76-06ee3efff13d/master.m4a"
+      }
+    },
+    {
+      "id": 12603890,
+      "title": "8. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/8-bolum-az-gider-uz-beklerken-12603890",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_fc838e6d1875a27c2b04db29ee6f57f5.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603890",
+      "showId": 12431069,
+      "episodeNo": 8,
+      "publishedDate": "2023-04-04T08:23:28.080Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "26:47",
+      "audio": {
+        "duration": 1607.531594,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/695412a1-4eea-417d-809a-c994b9c8e168/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/695412a1-4eea-417d-809a-c994b9c8e168/master.m4a"
+      }
+    },
+    {
+      "id": 12603891,
+      "title": "9. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/9-bolum-az-gider-uz-beklerken-12603891",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_a2b8ae32624b8fd41571edc9023fc2c1.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603891",
+      "showId": 12431069,
+      "episodeNo": 9,
+      "publishedDate": "2023-04-04T08:22:53.120Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "28:50",
+      "audio": {
+        "duration": 1730.615813,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/14c1c43e-9d3d-4faa-b183-25560e6d8121/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/14c1c43e-9d3d-4faa-b183-25560e6d8121/master.m4a"
+      }
+    },
+    {
+      "id": 12603892,
+      "title": "10. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/10-bolum-az-gider-uz-beklerken-12603892",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_e8f736ace69b1d4808f228c6d054960c.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603892",
+      "showId": 12431069,
+      "episodeNo": 10,
+      "publishedDate": "2023-04-04T08:23:47.361Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "28:44",
+      "audio": {
+        "duration": 1724.275031,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/23bdcde8-f4de-4dda-8b0e-e89600518427/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/23bdcde8-f4de-4dda-8b0e-e89600518427/master.m4a"
+      }
+    },
+    {
+      "id": 12603893,
+      "title": "11. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/11-bolum-az-gider-uz-beklerken-12603893",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_05bfa3ed902b0ac94eaf7cc7ca026fc9.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603893",
+      "showId": 12431069,
+      "episodeNo": 11,
+      "publishedDate": "2023-04-04T08:23:43.616Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "28:52",
+      "audio": {
+        "duration": 1732.390188,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/319da06c-932b-4730-9d15-ad50d3b3bdf1/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/319da06c-932b-4730-9d15-ad50d3b3bdf1/master.m4a"
+      }
+    },
+    {
+      "id": 12603894,
+      "title": "12. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/12-bolum-az-gider-uz-beklerken-12603894",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_87d5afbd8f11c4aea81313bdecf285a3.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603894",
+      "showId": 12431069,
+      "episodeNo": 12,
+      "publishedDate": "2023-04-04T08:23:50.299Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "29:56",
+      "audio": {
+        "duration": 1796.633,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/f3778fb9-f18b-4756-b21a-62ba830dc8c8/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/f3778fb9-f18b-4756-b21a-62ba830dc8c8/master.m4a"
+      }
+    },
+    {
+      "id": 12603897,
+      "title": "13. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/13-bolum-az-gider-uz-beklerken-12603897",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_872acbdc6a1e792ba083cc88d4e70867.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603897",
+      "showId": 12431069,
+      "episodeNo": 13,
+      "publishedDate": "2023-04-04T08:27:38.261Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "28:43",
+      "audio": {
+        "duration": 1723.909719,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/c5d43704-9e12-4858-b9c6-fc7893898eb0/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/c5d43704-9e12-4858-b9c6-fc7893898eb0/master.m4a"
+      }
+    },
+    {
+      "id": 12603898,
+      "title": "14. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/14-bolum-az-gider-uz-beklerken-12603898",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_2953cf64f9c8381bdd9b6194c3e10dc1.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603898",
+      "showId": 12431069,
+      "episodeNo": 14,
+      "publishedDate": "2023-04-04T08:33:24.282Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "29:10",
+      "audio": {
+        "duration": 1750.394875,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/a2121702-0ebc-4784-a265-20c5062c6e37/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/a2121702-0ebc-4784-a265-20c5062c6e37/master.m4a"
+      }
+    },
+    {
+      "id": 12603899,
+      "title": "15. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/15-bolum-az-gider-uz-beklerken-12603899",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_9757d9307d8a735febb9af76ff5c0dd4.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603899",
+      "showId": 12431069,
+      "episodeNo": 15,
+      "publishedDate": "2023-04-04T08:28:01.793Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "27:48",
+      "audio": {
+        "duration": 1668.960281,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/83fac008-52fd-4fe7-98c4-e1f6f4f73dc3/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/83fac008-52fd-4fe7-98c4-e1f6f4f73dc3/master.m4a"
+      }
+    },
+    {
+      "id": 12603900,
+      "title": "16. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/16-bolum-az-gider-uz-beklerken-12603900",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_3abaaccf83d157efb094fd15fb44f0dd.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603900",
+      "showId": 12431069,
+      "episodeNo": 16,
+      "publishedDate": "2023-04-04T08:28:27.477Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "32:20",
+      "audio": {
+        "duration": 1940.018156,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/2884cc58-4441-4568-ba5e-50ecd96a559b/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/2884cc58-4441-4568-ba5e-50ecd96a559b/master.m4a"
+      }
+    },
+    {
+      "id": 12603901,
+      "title": "17. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/17-bolum-az-gider-uz-beklerken-12603901",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_8331e6ba35c3ea76e9aa5292e61ad254.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603901",
+      "showId": 12431069,
+      "episodeNo": 17,
+      "publishedDate": "2023-04-04T08:28:09.573Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "29:08",
+      "audio": {
+        "duration": 1748.437844,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/31111b21-9371-4956-a77a-bad29696b9d2/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/31111b21-9371-4956-a77a-bad29696b9d2/master.m4a"
+      }
+    },
+    {
+      "id": 12603902,
+      "title": "18. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/18-bolum-az-gider-uz-beklerken-12603902",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_2655a2495d3bb2d7ca945a1e5b5c64e5.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603902",
+      "showId": 12431069,
+      "episodeNo": 18,
+      "publishedDate": "2023-04-04T08:28:58.759Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "29:24",
+      "audio": {
+        "duration": 1764.850813,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/8628a434-d860-4eee-b176-91fd14afe02e/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/8628a434-d860-4eee-b176-91fd14afe02e/master.m4a"
+      }
+    },
+    {
+      "id": 12603904,
+      "title": "19. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/19-bolum-az-gider-uz-beklerken-12603904",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_dddb1dc9fb3119b423995a790226af03.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603904",
+      "showId": 12431069,
+      "episodeNo": 19,
+      "publishedDate": "2023-04-04T08:29:36.711Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "28:09",
+      "audio": {
+        "duration": 1689.387688,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/c53efc7f-9d78-48cd-93c0-5f2f2b86fa88/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/c53efc7f-9d78-48cd-93c0-5f2f2b86fa88/master.m4a"
+      }
+    },
+    {
+      "id": 12603905,
+      "title": "20. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/20-bolum-az-gider-uz-beklerken-12603905",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_468c571c7329312347fd8405fd55a056.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603905",
+      "showId": 12431069,
+      "episodeNo": 20,
+      "publishedDate": "2023-04-04T08:29:49.237Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "28:49",
+      "audio": {
+        "duration": 1729.989563,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/a85cdfc0-bce8-4e82-8125-fa6f1d0b6049/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/a85cdfc0-bce8-4e82-8125-fa6f1d0b6049/master.m4a"
+      }
+    },
+    {
+      "id": 12603906,
+      "title": "21. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/21-bolum-az-gider-uz-beklerken-12603906",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_80196367741cd42b096640fa30485f2d.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603906",
+      "showId": 12431069,
+      "episodeNo": 21,
+      "publishedDate": "2023-04-04T08:31:53.824Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "28:21",
+      "audio": {
+        "duration": 1701.573469,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/0bfbb460-e3f0-42e7-ae58-06a503e79a2a/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/0bfbb460-e3f0-42e7-ae58-06a503e79a2a/master.m4a"
+      }
+    },
+    {
+      "id": 12603907,
+      "title": "22. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/22-bolum-az-gider-uz-beklerken-12603907",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_6f003d8a54ff1866a2d28554e22bd227.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603907",
+      "showId": 12431069,
+      "episodeNo": 22,
+      "publishedDate": "2023-04-04T08:31:25.681Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "28:48",
+      "audio": {
+        "duration": 1728.476125,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/5c43a72c-34f5-4696-aa6a-62caa3364fe3/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/5c43a72c-34f5-4696-aa6a-62caa3364fe3/master.m4a"
+      }
+    },
+    {
+      "id": 12603908,
+      "title": "23. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/23-bolum-az-gider-uz-beklerken-12603908",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_6d956ea3cce26db8c688338ff6ea081f.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603908",
+      "showId": 12431069,
+      "episodeNo": 23,
+      "publishedDate": "2023-04-04T08:32:04.803Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "31:57",
+      "audio": {
+        "duration": 1917.368781,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/72bc8eb8-568e-4cd9-8f30-8ad2ce0fa705/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/72bc8eb8-568e-4cd9-8f30-8ad2ce0fa705/master.m4a"
+      }
+    },
+    {
+      "id": 12603909,
+      "title": "24. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/24-bolum-az-gider-uz-beklerken-12603909",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_65057186c659bf7a9d7598ea4a92bba9.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603909",
+      "showId": 12431069,
+      "episodeNo": 24,
+      "publishedDate": "2023-04-04T08:31:55.363Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "29:54",
+      "audio": {
+        "duration": 1794.858625,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/1b535ff1-83bf-4fce-995e-c291e590a5d3/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/1b535ff1-83bf-4fce-995e-c291e590a5d3/master.m4a"
+      }
+    },
+    {
+      "id": 12603910,
+      "title": "25. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/25-bolum-az-gider-uz-beklerken-12603910",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_65dc25b9537b29fe3a794371e82ae5b0.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603910",
+      "showId": 12431069,
+      "episodeNo": 25,
+      "publishedDate": "2023-04-04T08:32:46.035Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "27:40",
+      "audio": {
+        "duration": 1660.058313,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/0e2e6bde-9843-4ce3-a42c-b333726061ac/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/0e2e6bde-9843-4ce3-a42c-b333726061ac/master.m4a"
+      }
+    },
+    {
+      "id": 12603911,
+      "title": "26. Bölüm - Az Gider Uz Beklerken",
+      "description": "-",
+      "type": "episode",
+      "path": "/az-gider-uz-beklerken/26-bolum-az-gider-uz-beklerken-12603911",
+      "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_episode_29476866bb6c38337524acbbc5bf20d7.jpeg",
+      "isLiked": false,
+      "position": 0,
+      "isCompleted": false,
+      "lastPlayed": false,
+      "shareUrl": "/show/az-gider-uz-beklerken?id=12603911",
+      "showId": 12431069,
+      "episodeNo": 26,
+      "publishedDate": "2023-04-04T08:33:35.283Z",
+      "show": {
+        "description": "Bahar ve Giray’ın üniversite sıralarından günümüze taşınan ümitsiz aşklarının ülkeyi bir gezgin gibi dolaşırken mektuplar üzerinden ümit barındırmaya başlamasıyla şekillenen felsefi-tarihi ve edebi bir drama belgesel.",
+        "path": "/show/az-gider-uz-beklerken",
+        "title": "Az Gider Uz Beklerken",
+        "type": "show",
+        "id": 12431069,
+        "imageUrl": "https://cdn-i.pr.trt.com.tr/trtdinle/17770387_0-0-768-768.jpeg",
+        "featuredImage": "https://cdn-i.pr.trt.com.tr/trtdinle/f_show_b256ee057b8cdb0b71a949794dbefb4f.jpeg",
+        "shareUrl": "/show/az-gider-uz-beklerken",
+        "coverImage": null,
+        "showType": "Podcast",
+        "genre": [
+          {
+            "path": "/genre/podcast",
+            "title": "Podcast",
+            "id": 131700
+          },
+          {
+            "path": "/genre/sanat",
+            "title": "Sanat",
+            "id": 4465540
+          },
+          {
+            "path": "/genre/felsefe-podcast",
+            "title": "Felsefe Podcast",
+            "id": 4465544
+          }
+        ],
+        "channel": {
+          "id": 131713,
+          "title": "Radyo 1: Radyo Programları"
+        },
+        "score": 0,
+        "popularity": 0,
+        "sort": "ascending"
+      },
+      "duration": "27:12",
+      "audio": {
+        "duration": 1632.999094,
+        "url": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/7c650992-a99a-4b8d-bab7-92b91ae86970/master.m3u8",
+        "downloadUrl": "https://cdn-a.pr.trt.com.tr/trtdinle/episode/7c650992-a99a-4b8d-bab7-92b91ae86970/master.m4a"
+      }
+    }
+  ],
+  "audioDuration": 44881.82888,
+  "duration": "12:28:01",
+  "noOfItems": 26,
+  "notification": false
+}

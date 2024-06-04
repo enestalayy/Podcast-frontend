@@ -16,7 +16,7 @@ const { userId } = route.params;
             shareUrl: `http://localhost:3000/podcast/${podcast._id}`,
           }"
         />
-        <PrimeButton text icon="pi pi-list" />
+        <PrimeButton @click="addToQueue(podcast)" text icon="pi pi-list" />
         <PrimeButton text icon="pi pi-ban" />
         <!-- <NuxtLink :to="'podcast/' + podcast._id"> GİT </NuxtLink> -->
       </div>
@@ -28,6 +28,8 @@ const { userId } = route.params;
 </template>
 
 <script>
+import { mapActions } from "pinia";
+
 export default {
   name: "UsersPodcastsFooter",
   props: {
@@ -35,6 +37,9 @@ export default {
       type: Object,
       required: false,
     },
+  },
+  methods: {
+    ...mapActions(useQueueStore, ["addToQueue"]),
   },
 };
 </script>

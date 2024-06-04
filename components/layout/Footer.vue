@@ -1,5 +1,5 @@
 <template>
-  <AudioPlayer v-if="currentEpisode" />
+  <AudioPlayer v-if="playingEpisode" />
 </template>
 
 <script>
@@ -12,7 +12,7 @@ export default {
     AudioPlayer,
   },
   computed: {
-    ...mapState(usePodcastStore, ["currentEpisode", "playlist"]),
+    ...mapState(useQueueStore, ["playingEpisode", "queue"]),
   },
 };
 </script>

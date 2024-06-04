@@ -1,13 +1,13 @@
 <template>
   <div
-    v-for="(episode, index) in episodes"
+    v-for="(episode, index) in podcast.episodes"
     :key="episode.id"
     class="w-full h-full episodeWrapper cardSurface br"
   >
     <PrimeDivider />
     <div class="row-between" style="align-items: stretch">
       <div class="row gap m p">
-        <img :src="episode.imageUrl" width="80" height="80" class="br" />
+        <img :src="podcast.imageUrl" width="80" height="80" class="br" />
         <div class="col gap">
           <p class="m-0">#{{ index + 1 }} - {{ episode.title }}</p>
           <p class="m-0" v-text="episode.description" />
@@ -16,7 +16,7 @@
       </div>
       <div>
         <EpisodeSettings
-          :episode="{ ...episode, podcastId: podcastId }"
+          :episode="{ ...episode, podcastId: podcast.podcastId }"
           class="settingSpeedialButton"
         />
       </div>
@@ -32,17 +32,10 @@ import UsersEpisodesFooter from "./UsersEpisodesFooter.vue";
 export default {
   name: "UsersEpisodes",
   props: {
-    episodes: {
-      type: Array,
+    podcast: {
+      type: Object,
       required: true,
     },
-    podcastId: {
-      type: String,
-      required: true,
-    },
-  },
-  created() {
-    this.episode;
   },
   components: {
     UsersEpisodesFooter,

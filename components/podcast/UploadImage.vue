@@ -1,11 +1,11 @@
 <template>
-  <div class="w-full min-h-dialog col-center gap">
+  <div class="w-full h-full col align-center gap">
     <div class="w-fit row gap">
       <PrimeFileUpload
         id="file"
         mode="basic"
         name="demo[]"
-        accept="image/*"
+        accept="image/jpeg,image/png,image/webp"
         :maxFileSize="1000000"
         chooseLabel="Dosya seç"
         chooseIcon="pi pi-file-import"
@@ -21,40 +21,45 @@
       />
     </div>
     <img
-      v-show="imageFromLocal"
       :src="imageFromLocal"
       width="200"
       height="200"
       alt="image"
-      class="br"
+      class="br m"
     />
   </div>
 </template>
 
 <script>
 import * as imageConversion from "image-conversion";
-import { mapActions } from "pinia";
 
 export default {
   name: "UploadImage",
+  data() {
+    return {
+      uploadedImage: null,
+    };
+  },
   props: {
     imageUrl: {
       type: String,
       required: false,
     },
   },
-  data() {
-    return {
-      imageFromLocal: null,
-    };
+  computed: {
+    imageFromLocal() {
+      const localImg = localStorage.getItem("podcastImage");
+      if (this.uploadedImage) {
+        return this.uploadedImage;
+      } else if (this.imageUrl) {
+        return this.imageUrl;
+      } else if (localImg) {
+        return localImg;
+      } else return "/defaultCardImage.webp";
+    },
   },
-  created() {
-    this.imageFromLocal = this.imageUrl
-      ? this.imageUrl
-      : localStorage.getItem("podcastImage");
-  },
+
   methods: {
-    ...mapActions(usePodcastStore, ["uploadImg"]),
     async resizeImg(event) {
       const file = event.target.files[0];
       if (!file) return;
@@ -66,22 +71,23 @@ export default {
         height: 200,
         orientation: 2,
       });
-
       const fr = new FileReader();
       fr.readAsDataURL(compressedImage);
 
       fr.addEventListener("load", () => {
         const url = fr.result;
-        this.imageFromLocal = url;
+        this.uploadedImage = url;
         localStorage.setItem("podcastImage", url);
+        this.$emit("update:imageUrl", url);
       });
 
-      this.uploadImg(compressedImage); // Resized image is uploaded here
+      // this.uploadImg(compressedImage); // Resized image is uploaded here
     },
 
     clearImage() {
       this.imageFromLocal = null;
       localStorage.removeItem("podcastImage");
+      this.$emit("update:imageUrl", "");
     },
   },
 };

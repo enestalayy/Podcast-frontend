@@ -1,6 +1,5 @@
 <template>
   <div>
-    {{ message }}
     <PrimeMessage :severity="severity">{{
       messages[message] || messages.auth[message] || message
     }}</PrimeMessage>
@@ -18,7 +17,6 @@ export default {
   },
   props: {
     message: {
-      type: Object || String,
       required: true,
     },
     severity: {

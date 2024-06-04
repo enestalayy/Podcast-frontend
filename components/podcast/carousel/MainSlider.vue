@@ -1,30 +1,38 @@
 <script setup>
-const dataFetch = async () => {
-  const { data, error } = await useFetch(
-    "https://www.trtdinle.com/api/detail?path=${path}"
-  );
-  console.log("data :>> ", data);
-  console.log("error :>> ", error);
-};
-dataFetch();
+// const dataFetch = async () => {
+//   const { data, error } = await useFetch(
+//     "https://www.trtdinle.com/api/detail?path=${path}"
+//   );
+//   console.log("data :>> ", data);
+//   console.log("error :>> ", error);
+// };
+// dataFetch();
 </script>
+
 <template>
   <div class="col-center">
     <Swiper
       :effect="'cards'"
       :grabCursor="true"
-      :modules="modules"
-      class="mainSlider"
+      :modules="[EffectCards, Autoplay]"
       :autoplay="autoplay"
+      class="mainSlider"
     >
-      <!-- <SwiperSlide
-        v-if="podcasts"
-        v-for="(slide, index) in podcasts.featuredPodcasts.contents"
+      <SwiperSlide
+        v-if="trtPodcasts"
+        v-for="(slide, index) in trtPodcasts.sets[0].contents"
         :key="index"
         class="mainSlide"
       >
-        <img :src="slide.imageUrl" alt="image" class="mainSliderImage" />
-      </SwiperSlide> -->
+        <NuxtImg
+          :src="slide.imageUrl"
+          alt="image"
+          quality="80"
+          width="400"
+          height="400"
+          class="mainSliderImage"
+        />
+      </SwiperSlide>
     </Swiper>
   </div>
 </template>
@@ -41,11 +49,15 @@ export default {
     SwiperSlide,
   },
   computed: {
-    ...mapState(usePodcastStore, ["podcasts", "pending"]),
+    ...mapState(usePodcastStore, [
+      "podcasts",
+      "staticPodcasts",
+      "trtPodcasts",
+      "pending",
+    ]),
   },
-  setup() {
+  data() {
     return {
-      modules: [EffectCards, Autoplay],
       autoplay: {
         disableOnInteraction: false,
       },

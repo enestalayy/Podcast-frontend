@@ -82,13 +82,6 @@ export default {
     toggleShowRecorder() {
       this.showRecorder = !this.showRecorder;
     },
-    handleFileUpload(event) {
-      console.log("event :>> ", event);
-      const files = event;
-      if (files.length > 0) {
-        const file = files[0];
-      }
-    },
   },
 };
 </script>

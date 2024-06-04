@@ -6,6 +6,8 @@ export default defineNuxtConfig({
     "nuxt-primevue",
     "@nuxtjs/supabase",
     "nuxt-swiper",
+    "nuxt-prepare",
+    "@nuxt/image",
   ],
 
   experimental: {
@@ -28,6 +30,10 @@ export default defineNuxtConfig({
   components: {
     global: true,
     dirs: ["~/components/common"],
+  },
+
+  prepare: {
+    scripts: ["server.prepare", "trt.prepare"],
   },
 
   primevue: {
@@ -69,6 +75,8 @@ export default defineNuxtConfig({
         "OverlayPanel",
         "Chips",
         "InputGroupAddon",
+        "ConfirmPopup",
+        "ConfirmDialog",
       ],
     },
   },

@@ -7,7 +7,7 @@
       </div>
       <div class="showOnEpisodeHover">
         <ShareButton :shareObject="episode" />
-        <PrimeButton text icon="pi pi-list" />
+        <PrimeButton @click="addToQueue(episode)" text icon="pi pi-list" />
         <PrimeButton text icon="pi pi-ban" />
       </div>
     </div>
@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import { mapActions } from "pinia";
+
 export default {
   name: "UsersEpisodesFooter",
   props: {
@@ -23,6 +25,9 @@ export default {
       type: Object,
       required: false,
     },
+  },
+  methods: {
+    ...mapActions(useQueueStore, ["addToQueue"]),
   },
 };
 </script>

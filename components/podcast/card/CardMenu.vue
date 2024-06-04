@@ -1,6 +1,6 @@
 <template>
   <PrimeSpeedDial
-    :id="id"
+    :id="podcast.id"
     :model="items"
     direction="right"
     :radius="60"
@@ -18,11 +18,13 @@
 </template>
 
 <script>
+import { mapActions } from "pinia";
+
 export default {
   name: "CardMenu",
   props: {
-    id: {
-      type: Number,
+    podcast: {
+      type: Object,
       required: true,
     },
   },
@@ -39,15 +41,22 @@ export default {
         },
         {
           label: "Çalma listesine ekle",
-          icon: "pi pi-list",
+          icon: "pi pi-plus",
         },
         {
           label: "Sıraya ekle",
-          icon: "pi pi-plus",
+          icon: "pi pi-list",
+          command: () => {
+            this.addToQueue(this.podcast.items);
+          },
         },
       ],
     };
   },
+  methods: {
+    ...mapActions(useQueueStore, ["addToQueue"]),
+  },
+  created() {},
 };
 </script>
 <style scoped></style>

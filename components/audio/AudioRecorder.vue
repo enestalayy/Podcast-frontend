@@ -81,10 +81,14 @@ export default {
 
         this.mediaRecorder.addEventListener("dataavailable", (event) => {
           this.audioChunks.push(event.data);
-          const concatenatedBlob = new Blob(this.audioChunks, {
-            type: "audio/webm;codecs=opus",
-          });
-          this.readFile(concatenatedBlob);
+          const concatenatedFile = new File(
+            this.audioChunks,
+            "concatenated_audio.webm",
+            {
+              type: "audio/webm;codecs=opus",
+            }
+          );
+          this.readFile(concatenatedFile);
         });
       }
     },

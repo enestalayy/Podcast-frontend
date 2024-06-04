@@ -16,7 +16,7 @@ if (!userId.length > 0) {
     <template #header>
       <div class="w-full">
         <span class="w-full row-stretch gap">
-          <div class="row-start gap">
+          <div class="row gap">
             <img :src="podcast.imageUrl" width="120" height="120" class="br" />
             <div class="col p gap">
               <p class="m-0" v-text="podcast.title" />
@@ -37,9 +37,12 @@ if (!userId.length > 0) {
       />
     </template>
     <UsersEpisodes
-      v-if="podcast.episodes"
-      :episodes="podcast.episodes"
-      :podcastId="podcast._id"
+      v-if="podcast.episodes.length > 0"
+      :podcast="{
+        episodes: [...podcast.episodes],
+        podcastId: podcast._id,
+        imageUrl: podcast.imageUrl,
+      }"
     />
   </PrimePanel>
 </template>

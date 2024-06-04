@@ -8,7 +8,5 @@ export default defineEventHandler(async (event) => {
     "olması gereken url :>> ",
     `https://www.trtdinle.com/api/detail?path=/show/5-dakika`
   );
-  return await $fetch(`${trtBaseUrl}/show/${podcastName}`, {
-    method: "GET",
-  });
+  return await $fetch(`${trtBaseUrl}/show/${podcastName}`);
 });

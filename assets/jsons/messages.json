@@ -16,10 +16,11 @@
     "409": "Bu e-posta zaten kullanılıyor.",
     "429": "Şu an üyelik taleplerimizde yoğunluk var. Lütfen biraz sonra tekrar deneyin veya Google ile giriş yapın. Anlayışınız için teşekkür ederiz!"
   },
-  "400": "İsteğinizde bir hata oluştu. Lütfen tekrar deneyin.",
+  "400": "Lütfen doğru bilgileri girdiğinizden emin olduktan sonra tekrar deneyiniz.",
   "401": "Bu işlem için yetkiniz bulunmuyor. Lütfen giriş yapın.",
   "403": "Bu içeriği görüntüleme izniniz bulunmuyor.",
   "404": "Aradığınız sayfa bulunamadı. Lütfen kontrol ederek tekrar deneyin.",
+  "413": "Dosya boyutu çok büyük.",
   "422": "Üzgünüz, isteğinizdeki içerik geçersiz veya eksik. Lütfen gerekli düzeltmeleri yaparak tekrar deneyin.",
   "500": "Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyin."
 }
